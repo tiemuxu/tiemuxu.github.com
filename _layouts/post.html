@@ -1,0 +1,41 @@
+---
+layout: main
+---
+<div class="post-time">
+    <div class="arrow"></div>
+    <div class="time"><p class="day">{{post.date | date: "%d"}}</p><p class="month_year">{{post.date | date: "%b·%Y"}}</p></div>
+    <div class="category">
+        {% if post.categories[0] %}
+            <p>
+                {% for c in post.categories %}
+                    {% if c[0] == '前端' %}
+                    <a href="/frontend.html"> 
+                    {% elsif c[0] == '翻译' %}
+                    <a href="/translation.html">
+                    {% elsif c[0] == '随笔' %}
+                    <a href="/essay.html">
+                    {% endif %}
+                        {{c[0]}} 
+                    </a>
+                {% endfor %}
+            </p>
+        {% endif %}
+    </div>
+    <div class="tag">
+        {% if post.tags[0] %}
+            <p>
+                {% for t in post.tags %}
+                    {% if forloop.last %}
+                       <a href="/tags.html#{{t}}">{{t}}</a>
+                    {% else %} 
+                        <a href="/tags.html#{{t}}">{{t}}</a>,
+                    {% endif %}
+                {% endfor %}
+            </p>
+        {% endif %}
+    </div>
+</div>
+<div class="content">
+    <h2>{{page.title}}</h2>
+    {{content}}
+</div>

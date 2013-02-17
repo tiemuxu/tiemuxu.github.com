@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equive="content-type" content="text/html; charset=utf-8" />
+    <title>{% if page.title %}{{page.title}} - {% endif %}{{site.title}}</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/layout.css" />
+    <script type="text/javascript" src="/js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="/js/global.js"></script>
+    <script type="text/javascript" src="/js/navigationbar.js"></script>
+    <script type="text/javascript" src="/js/widget.js"></script>
+    <script type="text/javascript" src="/js/hiddenbar.js"></script>
+</head>
+<body>
+    {% include header.html %}
+    {% include navigation.html %}
+    <div id="page">
+        {% include sidebar.html %}
+        <div class="post">
+            {{ content }}
+        </div>  
+    </div>
+    {% include hide-sidebar.html %}
+    {% include footer.html %}
+    
+</body>
+</html>

@@ -1,0 +1,56 @@
+<div id="sidebar-container">
+    <div class="sidebar">
+        <div id="clock" class="sidebar-info">
+            <canvas id="canvas" height="150" width="150"></canvas>
+        </div>
+    </div>
+    <div class="sidebar">
+        <h3>分类</h3>
+        <ul class="sidebar-info">
+            {% for category in site.categories %}
+            <li>
+                {% if caregory[0] == '前端' %}
+                    <a href="/frontend.html">
+                {% elsif category[0] == '翻译' %}
+                    <a href="/translation.html">
+                {% elsif category[0] == '随笔' %}
+                    <a href="/essay.html">
+                {% endif %}
+                        {{ category[0] }}
+                    </a>
+                    ({{ category[1].size }})
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="sidebar">
+        <h3>Tags</h3>
+        <ul class="sidebar-info">
+            {% for tag in site.tags %}
+            <li>
+                <a href="/tags.html#{{ tag[0] }}">
+                    {{ tag[0] }}
+                </a>
+                ({{ tag[1].size }})
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="sidebar">
+        <h3>博客归档</h3>
+        <ul class="sidebar-info">
+            {% if page.date %}
+                {% capture pageYear %}
+                    {{page.date | date: "%Y"}}
+                {% endcapture %}
+            {% endif %}
+            {% for y in site.years reversed %}
+                {% if y == pageYear %}
+                <li><b><a href="/archive.html#{{y}}">{{y}}</a></b></li>
+                {% else %}
+                <li><a href="archive.html#{{y}}">{{y}}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+</div>

@@ -192,15 +192,15 @@ a:active {
 }
 
 .post {
-   width: 770px;
-   margin: 0px 30px 10px 0px;
+   width: 760px;
+   margin: 0px 30px 10px 20px;
    border-bottom: 1px dashed #B8B8B8;
 }
 /*发po时间标签评论数*/
 .post-time {
   float: left;
   width: 140px;
-  margin: 20px 0px 10px 20px;
+  margin: 20px 0px 10px 0px;
 }
 .post-time a:link, .post-time a:visited {
   color: white;
@@ -275,10 +275,10 @@ a:active {
   height: 16px;
   background: url(../image/comment.gif) no-repeat;
 }
-/*po文部分*/
+/*post content*/
 .content {
   width: 610px;
-  margin: 0px 0px 0px 160px;
+  margin: 0px 0px 0px 150px;
   padding: 20px 0px 10px 0px; 
   font: 16px/1.5 Arial, sans-serif;
   letter-spacing: normal;
@@ -290,7 +290,7 @@ a:active {
   color: #79b429;
   margin-bottom: 20px;
 }
-/*侧边栏*/
+/*sidebar*/
 #sidebar-container {
   float: right;
   width: 200px;

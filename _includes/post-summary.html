@@ -1,5 +1,6 @@
 {% assign howMany = pagesToShow or 10 %}
 {% for post in site.posts limit:howMany %}
+<div class="post">
 <div class="post-time">
     <div class="arrow"></div>
     <div class="time"><p class="day">{{post.date | date: "%d"}}</p><p class="month_year">{{post.date | date: "%b·%Y"}}</p></div>
@@ -46,7 +47,8 @@
             {{ post.content|strip_html|truncate:400|newline_to_br }}
             {% endif %}
         {% endif %}
-    <div>
+    </div>
+</div>
 </div>
 {% endfor %}
 {% assign pagesToShow = nil %}

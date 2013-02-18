@@ -202,7 +202,7 @@ a:active {
   width: 140px;
   margin: 20px 0px 10px 20px;
 }
-.post-time a:link, a:visited {
+.post-time a:link, .post-time a:visited {
   color: white;
 }
 .post-time .time {
@@ -239,11 +239,11 @@ a:active {
   background-color: #404040;
   opacity: 0.8;
 }
-.post-time .archive p {
+.post-time .category p {
   margin: 7px 2px 7px 10px;
   padding-left: 20px;
   height: 16px;
-  background: url(../image/archive.gif) no-repeat;
+  background: url(../image/category.gif) no-repeat;
 }
 .post-time .tag {
   width: 125px;

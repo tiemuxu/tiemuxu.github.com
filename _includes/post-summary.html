@@ -7,14 +7,14 @@
         {% if post.categories[0] %}
             <p>
                 {% for c in post.categories %}
-                    {% if c[0] == '前端' %}
+                    {% if c == '前端' %}
                     <a href="/frontend.html"> 
-                    {% elsif c[0] == '翻译' %}
+                    {% elsif c == '翻译' %}
                     <a href="/translation.html">
-                    {% elsif c[0] == '随笔' %}
+                    {% elsif c == '随笔' %}
                     <a href="/essay.html">
                     {% endif %}
-                        {{c[0]}} 
+                        {{c}} 
                     </a>
                 {% endfor %}
             </p>
@@ -43,7 +43,7 @@
             {% if post.language == 'en' %}
             {{ post.content|strip_html|truncatewords:200|newline_to_br }}
             {% else %}
-            {{ post.content|strip_html|truncate:200|newline_to_br }}
+            {{ post.content|strip_html|truncate:400|newline_to_br }}
             {% endif %}
         {% endif %}
     <div>

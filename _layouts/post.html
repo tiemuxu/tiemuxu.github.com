@@ -3,28 +3,28 @@ layout: main
 ---
 <div class="post-time">
     <div class="arrow"></div>
-    <div class="time"><p class="day">{{post.date | date: "%d"}}</p><p class="month_year">{{post.date | date: "%b·%Y"}}</p></div>
+    <div class="time"><p class="day">{{page.date | date: "%d"}}</p><p class="month_year">{{page.date | date: "%b·%Y"}}</p></div>
     <div class="category">
-        {% if post.categories[0] %}
+        {% if page.categories %}
             <p>
                 {% for c in post.categories %}
-                    {% if c[0] == '前端' %}
+                    {% if c == '前端' %}
                     <a href="/frontend.html"> 
-                    {% elsif c[0] == '翻译' %}
+                    {% elsif c == '翻译' %}
                     <a href="/translation.html">
-                    {% elsif c[0] == '随笔' %}
+                    {% elsif c == '随笔' %}
                     <a href="/essay.html">
                     {% endif %}
-                        {{c[0]}} 
+                        {{c}} 
                     </a>
                 {% endfor %}
             </p>
         {% endif %}
     </div>
     <div class="tag">
-        {% if post.tags[0] %}
+        {% if page.tags %}
             <p>
-                {% for t in post.tags %}
+                {% for t in page.tags %}
                     {% if forloop.last %}
                        <a href="/tags.html#{{t}}">{{t}}</a>
                     {% else %} 

@@ -147,24 +147,21 @@ function moveRight(realFullHeight, realFullWidth) {
 
 // 改变img元素的src属性
 function changeSrc() {
-    // 在"."处断开字符串
     var srcString = attr(this, "src");
-    var oStringList = srcString.split(".");
-    var dotPosition = srcString.indexOf(".");
+    var dotPosition = srcString.lastIndexOf(".");
     
-    var newSrc = oStringList[0].substring(0, (dotPosition - 2));
-    newSrc = newSrc + "." + oStringList[1];
+    var newSrc = srcString.substring(0, (dotPosition - 2));
+    newSrc = newSrc + srcString.substring(dotPosition);
     
     attr(this, "src", newSrc);
 }
 function recoverySrc() {
     var srcString = attr(this, "src");
-    var oStringList = srcString.split(".");
-    var dotPosition = srcString.indexOf(".");
+    var dotPosition = srcString.lastIndexOf(".");
     
-    var newSrc = oStringList[0] + "bw" + "." + oStringList[1];
+    var recSrc = srcString.substring(0, dotPosition) + "bw" + srcString.substring(dotPosition);
     
-    attr(this, "src", newSrc);
+    attr(this, "src", recSrc);
 }
 
 

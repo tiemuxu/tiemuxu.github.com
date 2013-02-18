@@ -202,6 +202,9 @@ a:active {
   width: 140px;
   margin: 20px 0px 10px 20px;
 }
+.post-time a:link, a:visited {
+  color: white;
+}
 .post-time .time {
   width: 125px;
   height: 30px;
@@ -415,6 +418,7 @@ a:active {
 
 /*footer*/
 #footer {
+  clear: right;
   width: 1040px;
   height: 20px;
   margin: 0px auto 20px auto;

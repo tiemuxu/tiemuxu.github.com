@@ -1,56 +1,58 @@
 {% assign howMany = pagesToShow or 10 %}
 {% for post in site.posts limit:howMany %}
 <div class="post">
-<div class="post-time">
-    <div class="arrow"></div>
-    <div class="time"><p class="day">{{post.date | date: "%d"}}</p><p class="month_year">{{post.date | date: "%b·%Y"}}</p></div>
-    <div class="category">
-        {% if post.categories[0] %}
-            <p>
-                {% for c in post.categories %}
-                    {% if c == '前端' %}
-                    <a href="/frontend.html"> 
-                    {% elsif c == '翻译' %}
-                    <a href="/translation.html">
-                    {% elsif c == '随笔' %}
-                    <a href="/essay.html">
-                    {% endif %}
-                        {{c}} 
-                    </a>
-                {% endfor %}
-            </p>
-        {% endif %}
-    </div>
-    <div class="tag">
-        {% if post.tags[0] %}
-            <p>
-                {% for t in post.tags %}
-                    {% if forloop.last %}
-                       <a href="/tags.html#{{t}}">{{t}}</a>
-                    {% else %} 
-                        <a href="/tags.html#{{t}}">{{t}}</a>,
-                    {% endif %}
-                {% endfor %}
-            </p>
-        {% endif %}
-    </div>
-	<div class="comment"><p><a href="{{post.url}}#disqus_thread">0 comment</a></p></div>
+    <div class="post-time">
+	    <div class="arrow"></div>
+		<div class="time">
+		    <p class="day">{{post.date|date:"%d"}}</p>
+			<p class="month_year">{{post.date|date:"%Y/%b"}}</p>
+		</div>
+		<div class="category">
+		    {% if post.categories %}
+			    <p>
+				{% for c in post.categories %}
+				    {% if c == '前端' %}
+					<a href="/frontend.html">
+					{% elsif c == '翻译' %}
+					<a href="/translation.html">
+					{% elsif c == '随笔' %}
+					<a href="/essay.html">
+					{% endif %}
+					    {{c}}
+					</a>
+				{% endfor %}
+				</p>
+			{% endif %}
+		</div>
+		<div class="tag">
+		    {% if post.tags[0] %}
+			    <p>
+				{% for t in post.tags %}
+				    {% if forloop.last %}
+					<a href="/tags.html#{{t}}">{{t}}</a>
+					{% else %}
+					<a href="/tags.html#{{t}}">{{t}}</a>,
+					{% endif %}
+				{% endfor %}
+				</p>
+			{% endif %}
+		</div>
+		<div class="comment">
+		    <p><a href="{{post.url}}#disqus_thread">0</a></p>
+		</div>
+	</div>
+	<div class="content">
+	    <h2><a href="{{post.url}}">{{post.title}}</a></h2>
+		<div class="excerpt">
+		    {% if post.summary %}
+			    {{post.summary|newline_to_br}}
+			{% else %}
+			    {% if post.language == 'en' %}
+				{{post.content|strip_html|truncatewords:200|newline_to_br}}
+				{% else %}
+				{{post.content|strip_html|truncate:500|newline_to_br}}
+				{% endif %}
+			{% endif %}
+		</div>
+	</div>
 </div>
-<div class="content">
-    <h2><a href="{{post.url}}">{{post.title}}</a></h2>
-    <div class="excerpt">
-        {% if post.summary %}
-            {{ post.summary|newline_to_br }}
-        {% else %}
-            {% if post.language == 'en' %}
-            {{ post.content|strip_html|truncatewords:200|newline_to_br }}
-            {% else %}
-            {{ post.content|strip_html|truncate:500|newline_to_br }}
-            {% endif %}
-        {% endif %}
-    </div>
-</div>
-</div>
-{% endfor %}
-{% assign pagesToShow = nil %}
-{% assign howMany = nil %}

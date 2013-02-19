@@ -156,16 +156,13 @@ a:active {
 #menu li {
   float: left;
   width: 100px;
-  /*border: 1px solid red;*/
 }
 #menu li a {
   display: block;
   height: 14px;
   width: 50px;
-  /*border: 1px dotted green;*/
   text-align: left;
   padding: 8px 0px;
-  /*padding: 0 56.5px;*/
 }
 #menu a:link,#menu a:visited {
   color: #404040;
@@ -209,6 +206,7 @@ a:active {
   float: left;
   width: 140px;
   margin: 20px 0px 10px 0px;
+  font: 12px/1 arial, sans-serif;
 }
 .post-time a:link, .post-time a:visited {
   color: white;
@@ -248,10 +246,11 @@ a:active {
   opacity: 0.8;
 }
 .post-time .category p {
-  margin: 7px 2px 7px 10px;
+  margin: 9px 10px 9px 10px;
   padding-left: 20px;
-  height: 16px;
+  height: 12px;
   background: url(../image/category.gif) no-repeat;
+  overflow: hidden;
 }
 .post-time .tag {
   width: 125px;
@@ -263,10 +262,11 @@ a:active {
   opacity: 0.8;
 }
 .post-time .tag p {
-  margin: 7px 2px 7px 10px;
+  margin: 9px 10px 9px 10px;
   padding-left: 20px;
-  height: 16px;
+  height: 12px;
   background: url(../image/tag.gif) no-repeat;
+  overflow: hidden;
 }
 .post-time .comment {
   width: 125px;
@@ -278,10 +278,11 @@ a:active {
   opacity: 0.8;
 }
 .post-time .comment p {
-  margin: 7px 2px 7px 10px;
+  margin: 9px 10px 9px 10px;
   padding-left: 20px;
-  height: 16px;
+  height: 12px;
   background: url(../image/comment.gif) no-repeat;
+  overflow: hidden;
 }
 
 /*****************************************************/
@@ -292,7 +293,6 @@ a:active {
   margin: 0px 0px 0px 150px;
   padding: 20px 0px 10px 0px; 
   font: 16px/1.5 Arial, sans-serif;
-  letter-spacing: normal;
 }
 .content h2 {
   font-weight: bold;
@@ -310,17 +310,14 @@ a:active {
 }
 .sidebar {
   margin: 20px 20px 20px 0px;
+  color: #404040;
 }
 .sidebar h3 {
   padding: 7px 0px;
   line-height: 1;
-  color: black;
 }
 .sidebar .sidebar-info {
   padding: 0px 15px;
-}
-.sidebar #clock {
- padding: 0px;
 }
 
 /*******************************************************************************************/
@@ -429,6 +426,9 @@ a:active {
   margin-right: 0px;
 }
 
+
+/*****************************************************************************************************/
+/*****************************************************************************************************/
 
 /*footer*/
 #footer {

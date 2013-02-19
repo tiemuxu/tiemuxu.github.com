@@ -1,28 +1,3 @@
-// move element to a specified position
-function moveNavElem(elemID, final_x, final_y, interval) {
-    var elem = id(elemID);
-    if (elem.movement) {  
-        clearTimeout(elem.movement);       // 消除重影
-    }
-    var xpos = parseFloat(getStyle(elem, "left"));
-    var ypos = parseFloat(getStyle(elem, "top"));
-    
-    if ( xpos == final_x && ypos == final_y ) {
-        return true;
-    }
-    
-    var dist_x = ((final_x - xpos) / 10);
-    var dist_y = ((final_y - ypos) / 10);
-    xpos = xpos + dist_x;
-    ypos = ypos + dist_y;
-    
-    elem.style.left = xpos + "px";
-    elem.style.top = ypos + "px";
-    
-    var move = "moveNavElem('"+elemID+"',"+final_x+","+final_y+","+interval+")";
-    elem.movement = setTimeout(move, interval);
-}
-
 function newmove(elemID, final_x, final_y, speed) {
     var elem = id(elemID);
     var xpos = parseFloat(getStyle(elem, "left"));
@@ -46,9 +21,11 @@ function newmove(elemID, final_x, final_y, speed) {
     }
 }
 
+/******************************************************************************/
+
 isMoveUp = 1;
 isMoveDown = 0;
-// 向上移动导航条（隐藏）
+
 function moveUpFast() {
     if ( isMoveUp == 1 && isMoveDown == 0 ) {
         newmove("navigation", 0, 34, 1);
@@ -56,7 +33,7 @@ function moveUpFast() {
         isMoveDown += 1;
     }
 }
-// 向下移动导航条（显示）
+
 function moveDownFast() {
     if ( isMoveUp == 0 && isMoveDown == 1 ) {
         newmove("navigation", 0, 60, 1);
@@ -78,7 +55,7 @@ function moveUpSlowly(e) {
         return stopDefault(e);
     }, 200);
 } 
-    
+
 function moveDownSlowly(e) { 
     setTimeout(function() {
         if ( isMoveUp == 0 && isMoveDown == 1 ) {
@@ -90,9 +67,10 @@ function moveDownSlowly(e) {
             isMoveDown += 1;
         }
         return stopDefault(e);
-    }, 100);  //350
-    
+    }, 100);  
 }
+
+/********************************************************************************/
 
 scrollTimes = 0;
 function scrollMoveNavbar(e) {
@@ -120,7 +98,8 @@ function scrollMoveNavbar(e) {
     return stopDefault(e);
 }
 
-// 标识当前页面
+/*********************************************************************************/
+
 function highlightPage() {
     var nav = id("navigation");
     var links = tag("a", nav);
@@ -132,6 +111,8 @@ function highlightPage() {
         }  
     }
 }
+
+/********************************************************************************/
 
 function changeSrc() {
     var srcString = attr(this, "src");
@@ -161,6 +142,8 @@ function changeNavIcon() {
     }
 }
 
+/*************************************************************************************/
+
 function backTop(e) {
     var curScrollY = scrollY();
     
@@ -183,6 +166,7 @@ function clickBackTop() {
     addEvent(elem, "click", backTop);
 }
 
+/*********************************************************************************/
 
 domReady(highlightPage);
 domReady(changeNavIcon);

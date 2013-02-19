@@ -1,9 +1,9 @@
-domReady(function() {
+    domReady(function() {
         clock();
         setInterval(clock, 1000);
-});
+    });
     
-function clock() {
+    function clock() {
       var now = new Date();
       var sec = now.getSeconds();
       var min = now.getMinutes();
@@ -19,8 +19,8 @@ function clock() {
         ctx.scale(0.5,0.5);
         ctx.rotate(-Math.PI/2);
         
-        ctx.strokeStyle = "#404040";
-        ctx.fillStyle = "#404040";
+        ctx.strokeStyle = "black";
+        ctx.fillStyle = "black";
         ctx.lineWidth = 8;
         ctx.lineCap = "round";
         
@@ -104,4 +104,4 @@ function clock() {
         
       ctx.restore();
    
-}
+    }

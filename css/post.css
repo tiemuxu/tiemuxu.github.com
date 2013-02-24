@@ -1,0 +1,16 @@
+#relatedPost {
+  opacity: 0.5;
+}
+#relatedPost #greenBar {
+  height: 30px;
+  width: 125px;
+  margin-bottom: 2px;
+  color: #404040;
+  background-color: #79b429;
+}
+#relatedPost #darkBox {
+  width: 125px;
+  height: 200px;
+  color: white;
+  background-color: #404040;
+}

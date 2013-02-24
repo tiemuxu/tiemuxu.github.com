@@ -1,28 +1,4 @@
 // move element to a specified position
-function moveNavElem(elemID, final_x, final_y, interval) {
-    var elem = id(elemID);
-    if (elem.movement) {  
-        clearTimeout(elem.movement);       // 消除重影
-    }
-    var xpos = parseFloat(getStyle(elem, "left"));
-    var ypos = parseFloat(getStyle(elem, "top"));
-    
-    if ( xpos == final_x && ypos == final_y ) {
-        return true;
-    }
-    
-    var dist_x = ((final_x - xpos) / 10);
-    var dist_y = ((final_y - ypos) / 10);
-    xpos = xpos + dist_x;
-    ypos = ypos + dist_y;
-    
-    elem.style.left = xpos + "px";
-    elem.style.top = ypos + "px";
-    
-    var move = "moveNavElem('"+elemID+"',"+final_x+","+final_y+","+interval+")";
-    elem.movement = setTimeout(move, interval);
-}
-
 function newmove(elemID, final_x, final_y, speed) {
     var elem = id(elemID);
     var xpos = parseFloat(getStyle(elem, "left"));
@@ -46,52 +22,19 @@ function newmove(elemID, final_x, final_y, speed) {
     }
 }
 
-isMoveUp = 1;
-isMoveDown = 0;
-// 向上移动导航条（隐藏）
 function moveUpFast() {
-    if ( isMoveUp == 1 && isMoveDown == 0 ) {
-        newmove("navigation", 0, 34, 1);
-        isMoveUp -= 1;
-        isMoveDown += 1;
-    }
+    newmove("navigation", 0, 34, 1);
 }
-// 向下移动导航条（显示）
 function moveDownFast() {
-    if ( isMoveUp == 0 && isMoveDown == 1 ) {
-        newmove("navigation", 0, 60, 1);
-        isMoveUp += 1;
-        isMoveDown -= 1;
-    }
+    newmove("navigation", 0, 60, 1);
 }
-
 function moveUpSlowly(e) {
-    setTimeout(function() {
-        if ( isMoveUp == 1 && isMoveDown == 0 ) {
-            newmove("navigation", 0, 34, 2);
-            isMoveUp -= 1;
-            isMoveDown += 1;
-        } else if ( isMoveUp == 0 && isMoveDown == 1 ) {
-            isMoveUp += 1;
-            isMoveDown -= 1;
-        }
-        return stopDefault(e);
-    }, 200);
-} 
-    
-function moveDownSlowly(e) { 
-    setTimeout(function() {
-        if ( isMoveUp == 0 && isMoveDown == 1 ) {
-            newmove("navigation", 0, 60, 2);
-            isMoveUp += 1;
-            isMoveDown -= 1;
-        } else if ( isMoveUp == 1 && isMoveDown == 0 ) {
-            isMoveUp -= 1;
-            isMoveDown += 1;
-        }
-        return stopDefault(e);
-    }, 100);  //350
-    
+    newmove("navigation", 0, 34, 2);
+	return stopDefault(e);
+}
+function moveDownSlowly(e) {
+    newmove("navigation", 0, 60, 2);
+    return stopDefault(e);
 }
 
 scrollTimes = 0;
@@ -101,24 +44,25 @@ function scrollMoveNavbar(e) {
     if ( curScrollY > 0 ) {
         if ( scrollTimes == 0 ) {
             moveUpFast();
-            $("#navigation").mouseenter(moveDownSlowly);
-            $("#header").mouseenter(moveDownSlowly);
-            $("#header").mouseleave(moveUpSlowly);
-            $("#navigation").mouseleave(moveUpSlowly);
+            $("#header-wrapper").mouseenter(moveDownSlowly);
+            //$("#header").mouseenter(moveDownSlowly);
+            $("#header-wrapper").mouseleave(moveUpSlowly);
+            //$("#navigation").mouseleave(moveUpSlowly);
             scrollTimes += 1;
         } 
         
     } else {
-        $("#header").unbind("mouseenter", moveDownSlowly);
-        $("#navigation").unbind("mouseenter", moveDownSlowly);
-        $("#navigation").unbind("mouseleave", moveUpSlowly);
-        $("#header").unbind("mouseleave", moveUpSlowly);
+        $("#header-wrapper").unbind("mouseenter", moveDownSlowly);
+        //$("#navigation").unbind("mouseenter", moveDownSlowly);
+        //$("#navigation").unbind("mouseleave", moveUpSlowly);
+        $("#header-wrapper").unbind("mouseleave", moveUpSlowly);
         moveDownFast();
         scrollTimes = 0;   
     }  
     
     return stopDefault(e);
 }
+
 
 // 标识当前页面
 function highlightPage() {

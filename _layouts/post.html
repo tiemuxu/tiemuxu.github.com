@@ -2,11 +2,12 @@
 layout: main
 ---
 <div class="single-post">
+    <div class="aboutPost">
 	<div class="post-time">
 	    <div class="arrow"></div>
 		<div class="time">
 		    <p class="day">{{page.date|date:"%d"}}</p>
-			<p class="month_year">{{page.date|date:"%Y/%b"}}</p>
+			<p class="month_year">{{page.date|date:"%Y·%b"}}</p>
 		</div>
 		<div class="category">
 		    {% if page.categories %}
@@ -41,6 +42,14 @@ layout: main
 		<div class="comment">
 		    <p><a href="{{page.url}}#disqus_thread">0</a></p>
 		</div>
+	</div>
+	<div id="relatedPost">
+	    <div id="greenBar"><h3>相关文章</h3></div>
+		<div id="darkBox">
+		    <ul>
+			</ul>
+		</div>
+	</div>
 	</div>
 	<div class="content">
 	    <h2>{{page.title}}</h2>

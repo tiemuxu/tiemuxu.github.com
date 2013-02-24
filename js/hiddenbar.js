@@ -31,8 +31,8 @@ function slideIn(elem) {
     var h = fullHeight(elem);   // 这里的顺序很重要，一定要先获得高度宽度再设置为0
     var w = fullWidth(elem);
     
-    elem.style.height = "0px";
-    elem.style.width = "0px";
+    //elem.style.height = "0px";
+    //elem.style.width = "0px";
     
     setOpacity(elem, 0);
     
@@ -45,8 +45,8 @@ function slideIn(elem) {
             var pos = i;
             var opacity = i;
             setTimeout(function() {
-                elem.style.height = ((pos / 100) * h) + "px";
-                elem.style.width = ((pos / 100) * w) + "px";
+                //elem.style.height = ((pos / 100) * h) + "px";
+                //elem.style.width = ((pos / 100) * w) + "px";
                 setOpacity(elem, (opacity / 100) * 98);
             }, (pos + 1) * 2);
         })();
@@ -78,8 +78,8 @@ function slideOut(elem, realFullHeight, realFullWidth) {
         hide(contact);
     })();
     
-    var h = parseInt(elem.style.height);   // 获取元素在触发mouseout事件时的尺寸（如果slideIn没有完全执行就slideOut，那么此时的尺寸不等于元素的完整尺寸）
-    var w = parseInt(elem.style.width);
+    //var h = parseInt(elem.style.height);   // 获取元素在触发mouseout事件时的尺寸（如果slideIn没有完全执行就slideOut，那么此时的尺寸不等于元素的完整尺寸）
+    //var w = parseInt(elem.style.width);
     var curOpacity = getStyle(elem, "opacity") * 100;
     
     for ( var i = 100; i >= 0; i -= 5 ) {
@@ -89,8 +89,8 @@ function slideOut(elem, realFullHeight, realFullWidth) {
             var pos = i;
             var opacity = i;
             slideOut.hide = setTimeout(function() {
-                elem.style.height = ((pos / 100) * h) + "px";
-                elem.style.width = ((pos / 100) * w) + "px";
+                //elem.style.height = ((pos / 100) * h) + "px";
+                //elem.style.width = ((pos / 100) * w) + "px";
                 if ( opacity <= curOpacity ) {
                     setOpacity(elem, opacity);
                 }
@@ -100,50 +100,28 @@ function slideOut(elem, realFullHeight, realFullWidth) {
     
     setTimeout(function() {
         hide(elem);
-        elem.style.height = realFullHeight + "px";    // 重要，隐藏后要记得恢复元素的本来尺寸，否则下次触发事件会出错
+        //elem.style.height = realFullHeight + "px";    // 重要，隐藏后要记得恢复元素的本来尺寸，否则下次触发事件会出错
         elem.style.width = realFullWidth + "px";
     }, 202);
     
 }
 
-// 控制元素是否可移动的开关，1表示可移动，0表示不可移动
-moveLeft.$$guid = 1;
-moveRight.$$guid = 0;
-// 向左移动并显现隐藏的信息栏
+
 function moveLeft() {
-    if ( moveLeft.$$guid == 1 && moveRight.$$guid == 0 ) {
-        moveElem("switch", 0, 110, 1);
-        var elem = id("hide-sidebar");
-        setTimeout(function() {
-            slideIn(elem);
-        }, 180);
-        
-        moveLeft.$$guid -= 1;
-        moveRight.$$guid += 1;
-    } else if ( moveLeft.$$guid == 0 && moveRight.$$guid == 1 ) {
-        moveLeft.$$guid += 1;
-        moveRight.$$guid -= 1;
-    }
+    moveElem("hiddenBar", 0, 110, 1);
+	var elem = id("hide-sidebar");
+	setTimeout(function() {
+	    slideIn(elem);
+	},180);
 }
-// 向右移动并隐藏信息栏
 function moveRight(realFullHeight, realFullWidth) {
-    setTimeout(function() {
-        if ( moveRight.$$guid == 1 && moveLeft.$$guid == 0 ) {
-            
-            var elem = id("hide-sidebar");
-            slideOut(elem, realFullHeight, realFullWidth);
-            setTimeout(function() {
-                moveElem("switch", -25, 110, 1);
-            }, 150);
-            
-            moveRight.$$guid -= 1;
-            moveLeft.$$guid += 1;
-        } else if ( moveRight.$$guid == 0 && moveLeft.$$guid == 1 ) {
-            moveLeft.$$guid -= 1;
-            moveRight.$$guid += 1;
-        }
-    }, 100);
+    var elem = id("hide-sidebar");
+	slideOut(elem, realFullHeight, realFullWidth);
+	setTimeout(function() {
+	    moveElem("hiddenBar", -290, 110, 1);
+	},180);
 }
+
 
 // 改变img元素的src属性
 function changeSrc() {
@@ -172,17 +150,18 @@ function moveSwitch() {
     var realFullHeight = fullHeight(hiddenElem); // 记录下元素的真实完整尺寸，给slideOut函数使用
     var realFullWidth = fullWidth(hiddenElem);
     
-    $("div#switch").mouseenter(moveLeft);
-    $("div#hide-sidebar").mouseenter(moveLeft);
-    $("div#hide-sidebar").mouseleave(function() { // 传入元素的真实完整尺寸，防止元素未完全展开而鼠标离开触发slideOut函数后元素的完整尺寸仍然正确
+    $("div#hiddenBar").mouseenter(moveLeft);
+    /*$("div#hide-sidebar").mouseenter(moveLeft);
+    $("div#hide-sidebar").mouseleave(function() { // 传入元素的真实完整尺寸，确保元素未完全展开而鼠标离开触发slideOut函数后元素的完整尺寸仍然正确
         moveRight(realFullHeight, realFullWidth);
         
-    });
-    $("div#switch").mouseleave(function() {
+    });*/
+    $("div#hiddenBar").mouseleave(function() {
         moveRight(realFullHeight, realFullWidth);
         
     });
 }
+
 
 
 function changeSocialIcon() {

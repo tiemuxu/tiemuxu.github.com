@@ -96,18 +96,7 @@ a:active {
   margin-top: 3px;
   margin-bottom: 3px;
 }
-#header #decoration {
-  width: 1040px;
-  height: 60px;
-  margin: 0 auto;
-}
-#header #decoration #rss {  
-  float: right;
-  margin-top: 2px;
-  margin-right: 200px;
-  width: 48px;
-  height: 48px;
-}
+
 
 /*************************************************************************************************/
 /*************************************************************************************************/
@@ -139,13 +128,13 @@ a:active {
   top: 7px;
 }
 #navigation #nav-wrapper {
-  width: 1040px;
+  width: 940px;
   margin: 0 auto;
   height: 30px;
 }
 #menu {
   float: left;
-  width: 1040px;
+  width: 940px;
   height: 30px;
 }
 #menu ul {
@@ -183,7 +172,7 @@ a:active {
  
 
 #page {
-  width: 1040px;
+  width: 940px;
   margin-top: 110px;
   margin-bottom: 0px;
   margin-left: auto;
@@ -193,22 +182,25 @@ a:active {
 }
 /***************************************/
 .post {           /*for home page*/
-   width: 760px;
-   margin: 0px 30px 10px 20px;
+   width: 680px;
+   margin: 0px 30px 10px 30px;
    border-bottom: 1px dashed #B8B8B8;
 }
 .single-post { /*for post page*/
-  width: 760px;
-  margin: 0px 30px 0px 20px;
+  width: 680px;
+  margin: 0px 30px 0px 30px;
 }
 .single-post .content {
   margin-bottom: 30px;
 } 
+.aboutPost {
+  float: left;
+  width: 150px;
+  padding: 30px 0px 30px 0px;
+}
 /*post time, category, and tag*/
 .post-time {
-  float: left;
   width: 140px;
-  margin: 20px 0px 10px 0px;
   font: 12px/1 arial, sans-serif;
 }
 .post-time a:link, .post-time a:visited {
@@ -292,9 +284,9 @@ a:active {
 
 /*post content*/
 .content {
-  width: 610px;
-  margin: 0px 0px 0px 150px;
-  padding: 20px 0px 10px 0px; 
+  width: 520px;
+  margin: 0px 0px 0px 160px;
+  padding: 30px 0px 30px 0px; 
   font: 16px/1.5 Arial, sans-serif;
 }
 .content h2 {
@@ -309,10 +301,10 @@ a:active {
 /*sidebar*/
 #sidebar-container {
   float: right;
-  width: 200px;
+  width: 150px;
 }
 .sidebar {
-  margin: 20px 20px 20px 0px;
+  margin: 30px 0px;
   color: #404040;
 }
 .sidebar h3 {
@@ -327,60 +319,42 @@ a:active {
 /*******************************************************************************************/
 
 /*A switch to turn on/off the hidden bar*/
-#switch {
+#hiddenBar {
   position: fixed;
   top: 110px;
-  right: -25px;
-  width: 50px;
+  right: -290px;
+  width: 300px;
+  height: 396px;
   z-index: 1;
+  border-top: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+  -webkit-box-shadow: -10px 10px 25px #686868;
+  -moz-box-shadow: -10px 10px 25px #686868;
+  box-shadow: -10px 10px 25px #686868;
 }
-#switch #switch-arrow {
-  float: left;
-  border-right: 15px solid #404040;
-  border-top: 15px solid #E0E0E0;
-  border-bottom: 15px solid #E0E0E0;
-}
-#switch #switch-bar {
-  width: 35px;
-  height: 30px;
-  margin-left: 15px;
-  background-color: #404040;
-}
-/*switch shadow*/
 #switch {
-  -webkit-box-shadow: 50px 5px 20px #686868;
-  -moz-box-shadow: 50px 5px 20px #686868;
-  box-shadow: 15px 40px 25px #888888;
+  position: absolute;
+  right: 280px;
+  top: 0px;  
+  width: 20px;
+  height: 396px;
+  background-color: #404040;
 }
 /*hidden bar*/
 #hide-sidebar {
   display: none;
-  position: fixed;
-  top: 110px;
-  right: 50px;
-  width: 280px;
-  height: 400px;
-  z-index: 5;
-  color: white;
-  background-color: #79b429;
-}
-/*shadow*/
-#hide-sidebar {
-  -webkit-box-shadow: 5px 5px 5px #686868;
-  -moz-box-shadow: 5px 5px 5px #686868;
-  box-shadow: 15px 40px 25px #888888;
-}
-#hide-sidebar h3 {
-  color: #404040;
-}
-#hide-sidebar #hide-arrow {
-  /*display: none;*/
   position: absolute;
   top: 0px;
   right: 0px;
-  border-right: 15px solid #E0E0E0;
-  border-top: 15px solid #79b429;
-  border-bottom: 15px solid #79b429;
+  width: 280px;
+  height: 396px;
+  z-index: 5;
+  color: white;
+  background-color: #79b429;
+  margin-top: 0px;
+}
+#hide-sidebar h3 {
+  color: #404040;
 }
 #hide-sidebar .social {
   display: none;
@@ -436,20 +410,20 @@ a:active {
 /*footer*/
 #footer {
   clear: right;
-  width: 1040px;
+  width: 940px;
   height: 20px;
   margin: 0px auto 20px auto;
-  padding: 20px 0px;
+  padding: 10px 0px;
   font: 14px/1.5 Arial, sans-serif;
   color: #B8B8B8;
   background-color: white;
-  border-top: 1px solid #79b429;
+  border-top: 1px solid #B8B8B8;
 }
 #footer .copyright {
   float: left;
-  margin-left: 10px;
+  margin-left: 30px;
 }
 #footer .designer {
   float: right;
-  margin-right: 10px;
+  margin-right: 30px;
 }

@@ -302,6 +302,7 @@ a:active {
 #sidebar-container {
   float: right;
   width: 150px;
+  margin-right: 30px;
 }
 .sidebar {
   margin: 30px 0px;

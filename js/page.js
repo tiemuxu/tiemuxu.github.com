@@ -11,13 +11,15 @@ function initPageHeight() {
 
 function initRelated() {
     var related = id("relatedPost");
-	var content = $(".content")[0];
-	var timeBox = $(".post-time")[0];
-	var conHeight = parseFloat(getStyle(content, "height"));
-	var relHeight = parseFloat(fullHeight(related));
-	var timeHeight = parseFloat(getStyle(timeBox, "height"));
-	var toMargin = conHeight - relHeight - timeHeight;
-	related.style.marginTop = toMargin + "px";
+	if ( related != null ) {
+	    var content = $(".content")[0];
+	    var timeBox = $(".post-time")[0];
+	    var conHeight = parseFloat(getStyle(content, "height"));
+	    var relHeight = parseFloat(fullHeight(related));
+	    var timeHeight = parseFloat(getStyle(timeBox, "height"));
+	    var toMargin = conHeight - relHeight - timeHeight;
+	    related.style.marginTop = toMargin + "px";
+	}
 }
 /******************************************************************************************************/
 

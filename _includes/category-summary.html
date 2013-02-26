@@ -1,0 +1,61 @@
+{% assign howMany = pagesToShow or 10 %}
+{% for post in site.posts limit:howMany %}
+{% if post.categories[0] %}
+    { % for c in post.categories %}
+	    {% if c == theCategory %}
+		    <div class="post">
+			    <div class="aboutPost">
+				    <div class="post-time">
+					    <div class="arrow"></div>
+						<div class="time"><p class="day">{{post.date | date: "%d"}}</p><p class="month_year">{{post.date | date: "%b·%Y"}}</p></div>
+						<div class="category">
+						    <p>
+							    {% if theCategory == '前端' %}
+								<a href="/frontend.html">
+								{% elsif theCategory == '翻译' %}
+								<a href="/translation.html">
+								{% elsif theCategory == '随笔' %}
+								<a href="/essay.html">
+								{% endif %}
+								    {{ c }}
+								</a>
+							</p>
+						</div>
+						<div class="tag">
+						    {% if post.tags[0] %}
+							    <p>
+								    {% for t in post.tags %}
+									    {% if forloop.last %}
+										    <a href="/tags.html#{{t}}">{{t}}</a>
+										{% else %}
+										    <a href="/tags.html#{{t}}">{{t}}</a>,
+										{% endif %}
+									{% endfor %}
+								</p>
+							{% endif %}
+						</div>
+						<div class="comment"><p><a href="{{post.url}}#disqus_thread">0 comment</a></p></div>
+					</div>
+				</div>
+				<div class="content">
+				    <h2><a href="{{post.url}}">{{post.title}}</a></h2>
+					<div class="excerpt">
+					    {% if post.summary %}
+						    {{ post.summary|newline_to_br }}
+						{% else %}
+						    {% if post.language == 'en' %}
+							{{ post.content|strip_html|truncatewords:200 }}
+							{% else %}
+							{{ post.content|strip_html|truncate:500 }}
+							{% endif %}
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		{% endif %}
+	{% endfor %}
+{% endif %}
+{% endfor %}
+{% assign theCategory = nil %}
+{% assign pagesToShow = nil %}
+{% assign howMany = nil %}

@@ -1,16 +1,27 @@
 #relatedPost {
   opacity: 0.5;
-}
-#relatedPost #greenBar {
-  height: 30px;
   width: 125px;
-  margin-bottom: 2px;
-  color: #404040;
-  background-color: #79b429;
-}
-#relatedPost #darkBox {
-  width: 125px;
-  height: 200px;
-  color: white;
+  height: 230px;
   background-color: #404040;
+  border-radius: 5px; 
+}
+#relatedPost h3 {
+  height: 16px;
+  color: white;
+  padding: 7px 0px;
+  font: 16px/1 arial;
+  font-weight: bold;
+  text-align: center;
+}
+#relatedPost #conBox {
+  width: 85px;
+  height: 170px;
+  margin: 0px 10px 10px 10px;
+  padding: 10px;
+  color: #79b429;
+  background-color: white;
+ border-radius: 3px; 
+}
+#relatedPost #conBox ul {
+  list-style: none;
 }

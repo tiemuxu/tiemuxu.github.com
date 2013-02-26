@@ -3,53 +3,53 @@ layout: main
 ---
 <div class="single-post">
     <div class="aboutPost">
-	<div class="post-time">
-	    <div class="arrow"></div>
-		<div class="time">
-		    <p class="day">{{page.date|date:"%d"}}</p>
-			<p class="month_year">{{page.date|date:"%Y·%b"}}</p>
-		</div>
-		<div class="category">
-		    {% if page.categories %}
-			    <p>
-				{% for c in page.categories %}
-				    {% if c == '前端' %}
-					<a href="/frontend.html">
-					{% elsif c == '翻译' %}
-					<a href="/translation.html">
-					{% elsif c == '随笔' %}
-					<a href="/essay.html">
-					{% endif %}
-					    {{c}}
-					</a>
-				{% endfor %}
-				</p>
-			{% endif %}
-		</div>
-		<div class="tag">
-		    {% if page.tags[0] %}
-			    <p>
-				{% for t in page.tags %}
-				    {% if forloop.last %}
-					<a href="/tags.html#{{t}}">{{t}}</a>
-					{% else %}
-					<a href="/tags.html#{{t}}">{{t}}</a>,
-					{% endif %}
-				{% endfor %}
-				</p>
-			{% endif %}
-		</div>
-		<div class="comment">
-		    <p><a href="{{page.url}}#disqus_thread">0</a></p>
-		</div>
-	</div>
-	<div id="relatedPost">
-	    <div id="greenBar"><h3>相关文章</h3></div>
-		<div id="darkBox">
-		    <ul>
-			</ul>
-		</div>
-	</div>
+	    <div class="post-time">
+	        <div class="arrow"></div>
+		    <div class="time">
+		        <p class="day">{{page.date|date:"%d"}}</p>
+			    <p class="month_year">{{page.date|date:"%Y·%b"}}</p>
+		    </div>
+		    <div class="category">
+		        {% if page.categories %}
+			        <p>
+				    {% for c in page.categories %}
+				        {% if c == '前端' %}
+					    <a href="/frontend.html">
+					    {% elsif c == '翻译' %}
+					    <a href="/translation.html">
+					    {% elsif c == '随笔' %}
+					    <a href="/essay.html">
+					    {% endif %}
+					        {{c}}
+					    </a>
+				    {% endfor %}
+				    </p>
+			    {% endif %}
+		    </div>
+		    <div class="tag">
+		        {% if page.tags[0] %}
+			        <p>
+				    {% for t in page.tags %}
+				        {% if forloop.last %}
+					    <a href="/tags.html#{{t}}">{{t}}</a>
+					    {% else %}
+					    <a href="/tags.html#{{t}}">{{t}}</a>,
+					    {% endif %}
+				    {% endfor %}
+				    </p>
+			    {% endif %}
+		    </div>
+		    <div class="comment">
+		        <p><a href="{{page.url}}#disqus_thread">0</a></p>
+		    </div>
+	    </div>
+	    <div id="relatedPost">
+	        <h3>相关文章</h3>
+		    <div id="conBox">
+		        <ul>
+			    </ul>
+		    </div>
+	    </div>
 	</div>
 	<div class="content">
 	    <h2>{{page.title}}</h2>

@@ -254,24 +254,24 @@ function fadeIn(elem, to, speed) {
             var opacity = i;
             setTimeout(function() {
                 setOpacity(elem, (opacity / 100) * to);
-            }, (i + 1) * speed);
+            }, (opacity + 1) * speed);
         })();   
     }
 } 
 
-function fadeOut(elem, to, speed) {
+function fadeOut(elem, speed) {
     var curOpacity = getStyle(elem, "opacity") * 100;
     
-    for ( var i = 0; i < 100; i += 5 ) {
+    for ( var i = 0; i <= 100; i += 5 ) {
         (function() {
-            var opacity = i;
+            var step = i;
             setTimeout(function() {
-                var newOpacity = curOpacity - opacity;
-                setOpacity(elem, newOpacity);
+                var opacity = curOpacity - (step / 100) * curOpacity;
+                setOpacity(elem, opacity);
                 if ( newOpacity == 5 ) { 
                     hide(elem);
                 }
-            }, (i + 1) * speed);
+            }, (step + 1) * speed);
         })();
     }
 }

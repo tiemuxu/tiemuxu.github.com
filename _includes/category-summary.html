@@ -1,8 +1,8 @@
 {% assign howMany = pagesToShow or 10 %}
 {% for post in site.posts limit:howMany %}
 {% if post.categories[0] %}
-    { % for c in post.categories %}
-	    {% if c == theCategory %}
+    {% for c in post.categories %}
+	    {% if c == curCategory %}
 		    <div class="post">
 			    <div class="aboutPost">
 				    <div class="post-time">
@@ -10,11 +10,11 @@
 						<div class="time"><p class="day">{{post.date | date: "%d"}}</p><p class="month_year">{{post.date | date: "%b·%Y"}}</p></div>
 						<div class="category">
 						    <p>
-							    {% if theCategory == '前端' %}
+							    {% if c == '前端' %}
 								<a href="/frontend.html">
-								{% elsif theCategory == '翻译' %}
+								{% elsif c == '翻译' %}
 								<a href="/translation.html">
-								{% elsif theCategory == '随笔' %}
+								{% elsif c == '随笔' %}
 								<a href="/essay.html">
 								{% endif %}
 								    {{ c }}

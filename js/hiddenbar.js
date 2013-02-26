@@ -31,15 +31,15 @@ function moveLeft() {
     moveElem("hiddenBar", 0, 110, 1);
 	var elem = id("hide-sidebar");
 	setTimeout(function() {
-	    slideIn(elem);
-	},180);
+	    fadeIn(elem, 100, 5);
+	},200);
 }
-function moveRight(realFullHeight, realFullWidth) {
+function moveRight() {
     var elem = id("hide-sidebar");
-	slideOut(elem, realFullHeight, realFullWidth);
+	fadeOut(elem, 2);
 	setTimeout(function() {
-	    moveElem("hiddenBar", -290, 110, 1);
-	},180);
+	    moveElem("hiddenBar", -420, 110, 1);
+	},202);
 }
 
 

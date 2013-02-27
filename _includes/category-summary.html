@@ -3,6 +3,7 @@
 {% if post.categories[0] %}
     {% for c in post.categories %}
 	    {% if c == curCategory %}
+		    <div class="CA"><p>分类归档：{{ c }}</p></div>
 		    <div class="post">
 			    <div class="aboutPost">
 				    <div class="post-time">
@@ -53,7 +54,7 @@
 				</div>
 			</div>
 		{% else %}
-		    <p class="noBlog">该分类还没有文章</p>
+		    <div class="CA"><p>分类归档：{{ curCategory }}</p></div>
 		{% endif %}
 	{% endfor %}
 {% endif %}

@@ -268,7 +268,7 @@ function fadeOut(elem, speed) {
             setTimeout(function() {
                 var opacity = curOpacity - (step / 100) * curOpacity;
                 setOpacity(elem, opacity);
-                if ( newOpacity == 5 ) { 
+                if ( opacity == 5 ) { 
                     hide(elem);
                 }
             }, (step + 1) * speed);

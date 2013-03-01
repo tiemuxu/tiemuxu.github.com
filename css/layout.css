@@ -157,10 +157,16 @@ a:active {
 }
 #menu a:link,#menu a:visited {
   color: #404040;
+  -webkit-transition: color .50s ease-out;
+  -moz-transition: color .50s ease-out;
+  transition:  color .50s ease-out;
   background-color: transparent;
 }
 #menu a:hover {
   color: #79b429;
+  -webkit-transition: color .50s ease-out;
+  -moz-transition: color .50s ease-out;
+  transition:  color .50s ease-out;
 }
 #menu a.here:link,
 #menu a.here:visited,
@@ -214,7 +220,7 @@ a:active {
   height: 30px;
   color: #404040;
   border-top: 1px solid #79b429;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #79b429;
   background-color: #79b429;
 }
 .post-time .time .day {
@@ -238,7 +244,7 @@ a:active {
   width: 125px;
   height: 30px;
   color: white;
-  border-top: 1px solid white;
+  border-top: 1px solid #404040;
   border-bottom: 1px solid #404040;
   background-color: #404040;
   opacity: 0.8;

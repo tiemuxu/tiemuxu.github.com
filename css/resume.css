@@ -246,6 +246,9 @@ header #menu ul {
 	list-style: none;
 	font: 16px/1 'MuseoSlab500', "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "SimHei";
 }
+#works li {
+    padding: 5px;
+}
 #works .worksdot {
     float: left;
 	width: 16px;

@@ -10,24 +10,26 @@ body {
 	-moz-background-size: 100%;
 	background-size: 100%;*/
     color: #fff;
-    font: 12px/1.5 Arial;
+    font: 12px/1.5 "Cabin Condensed", "Helvetica", "Hiragino Sans GB", "Microsoft Yahei", "Arial", sans-serif;
 }
 
 h1 {
-  font-family: 'MuseoSlab500', "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "SimHei";
+  /*font-family: 'MuseoSlab500', "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "SimHei";*/
   font-size: 2em;
   line-height: 1;
   font-weight: bold;
 }
 h2 {
-  font-family: 'MuseoSlab500', "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "SimHei";
+  /*font-family: 'MuseoSlab500', "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "SimHei";*/
   font-size: 1.5em;
   line-height: 1;
+  font-weight: bold;
 }
 h3 {
-  font-family: 'MuseoSlab500', "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "SimHei";
+  /*font-family: 'MuseoSlab500', "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "SimHei";*/
   font-size: 1.33em;
   line-height: 1;
+  font-weight: bold;
 }
 
 a {

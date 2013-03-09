@@ -11,9 +11,9 @@
 	var cirTxtAttr = {
 	    fill: "white",
 		//font: "arial",
-		"font-family": "sans-serif",
-		"font-size": 20,
-		"font-weight": "bold",
+		"font-family": "Microsoft Yahei",
+		"font-size": 16,
+		//"font-weight": "bold",
 		opacity: .8,
 	};
 	

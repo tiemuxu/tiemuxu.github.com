@@ -11,7 +11,8 @@
   padding: 10px 20px;
   color: white;
   background: #79b429;
-  font: 20px/1 "\9ED1\4F53"; 
+  font-size: 20px;
+  line-height: 1;
   border-radius: 3px;
   opacity: 0.8;
 }

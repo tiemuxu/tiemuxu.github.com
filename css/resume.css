@@ -140,9 +140,9 @@ header #menu ul {
     padding: 0px 20px;
 }
 .innerTable  td {
-    font: 16px/1 arial, sans-serif;
+    /*font: 16px/1 arial, sans-serif;*/
+	font-size: 16px;
 	padding: 10px 50px;
-	font-weight: bold;
 	border-width: 0px;
 	color: #B2FFED;
 	/*border: 1px solid #404040;*/

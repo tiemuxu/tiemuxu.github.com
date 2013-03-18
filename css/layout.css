@@ -394,12 +394,53 @@ a:active {
 #hide-sidebar .about {
   margin: 20px 20px 0px 130px;
 }
+
 #hide-sidebar .social {
-  margin: 10px 20px 20px 20px; 
+  float: left;
+  margin: 10px 20px 20px 20px;
+  list-style: none;  
 }
-#hide-sidebar .social .icon {
+#hide-social li {
+  float: left;
   margin-right: 10px;
+  width: 32px;
+  height: 32px;
 }
+#hide-social a {
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+
+#gplus {
+  background: url("../image/socials.png") 0 0;
+}
+#gplus a:hover {
+  background: url("../image/socials.png") 0 -32px;
+}
+
+#twi {
+  background: url("../image/socials.png") -32px 0;
+}
+#twi a:hover {
+  background: url("../image/socials.png") -32px -32px;
+}
+
+#dou {
+  background: url("../image/socials.png") -64px 0;
+}
+#dou a:hover {
+  background: url("../image/socials.png") -64px -32px;
+}
+
+#weibo {
+  background: url("../image/socials.png") -96px 0;
+}
+#weibo a:hover {
+  background: url("../image/socials.png") -96px -32px;
+}
+
+
 
 /*****************************************************************************************************/
 /*****************************************************************************************************/

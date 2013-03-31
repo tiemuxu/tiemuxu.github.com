@@ -3,11 +3,6 @@
 	    rad = Math.PI / 180,
 		chart = this.set();
 		
-	/*var circleAttr = {
-	    stroke: "none",
-		fill: "r#404040-#2a2a2c",
-		opacity: 0.7,
-	};*/
 	var cirTxtAttr = {
 	    fill: "white",
 		//font: "arial",
@@ -18,14 +13,18 @@
 	};
 	
 	function sector(cx, cy, r, startAngle, endAngle, params) {
-	    var x1 = cx + r * Math.cos(-startAngle * rad),
-		    y1 = cy + r * Math.sin(-startAngle * rad),
-			x2 = cx + r * Math.cos(-endAngle * rad),
-			y2 = cy + r * Math.sin(-endAngle * rad);
-		return paper.path(["M", cx, cy, "L", x1, y1, "A", r, r, 0, +(endAngle - startAngle > 180), 0, x2, y2, "Z"]).attr(params);
+	    var x1 = cx + 40 * Math.cos(-startAngle * rad),
+		    y1 = cy + 40 * Math.sin(-startAngle * rad),
+			x2 = cx + r * Math.cos(-startAngle * rad),
+		    y2 = cy + r * Math.sin(-startAngle * rad),
+			x3 = cx + r * Math.cos(-endAngle * rad),
+			y3 = cy + r * Math.sin(-endAngle * rad),
+			x4 = cx + 40 * Math.cos(-endAngle * rad),
+			y4 = cy + 40 * Math.sin(-endAngle * rad);
+		return paper.path(["M", x1, y1, "L", x2, y2, "A", r, r, 0, +(endAngle - startAngle > 180), 0, x3, y3, "L", x4, y4, "A", 40, 40, 0, +(endAngle - startAngle > 180), 1, x1, y1, "Z"]]).attr(params);
 	}
 	
-	var circle = paper.circle(cx, cy, r-20).attr(circleAttr).toFront(),
+	var circle = paper.circle(cx, cy, 1).attr(circleAttr).toFront(),
 	    txt = paper.text(cx, cy, title).attr(cirTxtAttr);
     
 	var angle = 0,
@@ -34,21 +33,19 @@
 		    var value = values[j],
 			    label = labels[j],
 				angleplus = 360 * value / total,
-				ms = 500,
-				p = sector(cx, cy, r, angle, angle + angleplus, {fill: fill, stroke: stroke, "stroke-width": 1, opacity: .8}).toBack(),
-				easing = "elastic";
+				p = sector(cx, cy, r, angle, angle + angleplus, {fill: fill, stroke: stroke, "stroke-width": 1, opacity: .8}).toBack();
 				
 			p.mouseover(function() {
-			    p.stop().animate({opacity:1,transform: "s1.1 1.1 " + cx + " " + cy}, ms, easing);
-				circle.stop().animate({r: 40, opacity: .5},200);
+			    p.stop().animate({opacity:1,transform: "s1.1 1.1 " + cx + " " + cy}, 500, "elastic");
+				circle.stop().animate({r: 40, opacity: .5}, 500, "elastic");
 				txt.stop().attr({text: label + '\n' + value + "%"}).animate({opacity: 1}, 500, "bounce");
 			}).mouseout(function() {
-			    p.stop().animate({transform: "", opacity: 0.8}, ms, easing);
-				circle.stop().animate({r: r-20, opacity: 0.7}, 200);
+			    p.stop().animate({transform: "", opacity: 0.8}, 500, "elastic");
+				circle.stop().animate({r: 1, opacity: 0.7}, 500, "elastic");
 				txt.stop().attr({text: title}).animate({opacity: 0.8}, 500, "bounce");
 			});
 			circle.mouseover(function() {
-			    circle.stop().animate({r: 40, opacity: 0.5},200);
+			    circle.stop().animate({r: 40, opacity: 0.5}, 500, "elastic");
 			})
 			
 			angle += angleplus;

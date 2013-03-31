@@ -78,7 +78,7 @@ function moveSwitch() {
 
 
 
-function changeSocialIcon() {
+/*function changeSocialIcon() {
     var socialIcon = id("hide-social");
     var iconList = tag("img", socialIcon);
     
@@ -86,11 +86,11 @@ function changeSocialIcon() {
         addEvent(iconList[i], "mouseover", changeSrc);
         addEvent(iconList[i], "mouseout", recoverySrc);
     }
-}
+}*/
 
 // DOM可用时执行
 domReady(moveSwitch);
-domReady(changeSocialIcon);
+//domReady(changeSocialIcon);
 
 
 

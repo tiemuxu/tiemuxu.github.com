@@ -13,15 +13,15 @@
 	};
 	
 	function sector(cx, cy, r, startAngle, endAngle, params) {
-	    var x1 = cx + r * 0.4 * Math.cos(-startAngle * rad),
-		    y1 = cy + r * 0.4 * Math.sin(-startAngle * rad),
+	    var x1 = cx + r * 0.5 * Math.cos(-startAngle * rad),
+		    y1 = cy + r * 0.5 * Math.sin(-startAngle * rad),
 			x2 = cx + r * Math.cos(-startAngle * rad),
 		    y2 = cy + r * Math.sin(-startAngle * rad),
 			x3 = cx + r * Math.cos(-endAngle * rad),
 			y3 = cy + r * Math.sin(-endAngle * rad),
-			x4 = cx + r * 0.4 * Math.cos(-endAngle * rad),
-			y4 = cy + r * 0.4 * Math.sin(-endAngle * rad);
-		return paper.path(["M", x1, y1, "L", x2, y2, "A", r, r, 0, +(endAngle - startAngle > 180), 0, x3, y3, "L", x4, y4, "A", r * 0.4, r * 0.4, 0, +(endAngle - startAngle > 180), 1, x1, y1, "Z"]).attr(params);
+			x4 = cx + r * 0.5 * Math.cos(-endAngle * rad),
+			y4 = cy + r * 0.5 * Math.sin(-endAngle * rad);
+		return paper.path(["M", x1, y1, "L", x2, y2, "A", r, r, 0, +(endAngle - startAngle > 180), 0, x3, y3, "L", x4, y4, "A", r * 0.5, r * 0.5, 0, +(endAngle - startAngle > 180), 1, x1, y1, "Z"]).attr(params);
 	}
 	
 	var circle = paper.circle(cx, cy, 1).attr(circleAttr).toFront(),
@@ -33,19 +33,19 @@
 		    var value = values[j],
 			    label = labels[j],
 				angleplus = 360 * value / total,
-				p = sector(cx, cy, r, angle, angle + angleplus, {fill: fill, stroke: stroke, "stroke-width": 1, opacity: .8}).toBack();
+				p = sector(cx, cy, r, angle, angle + angleplus, {fill: fill, stroke: stroke, "stroke-width": 1, opacity: 1}).toBack();
 				
 			p.mouseover(function() {
-			    p.stop().animate({opacity:1,transform: "s1.1 1.1 " + cx + " " + cy}, 500, "elastic");
-				circle.stop().animate({r: r * 0.5, opacity: 1}, 500, "elastic");
+			    p.stop().animate({fill: "#6A4E3E", transform: "s1.1 1.1 " + cx + " " + cy}, 500, "elastic");
+				circle.stop().animate({r: r * 0.4, opacity: 1}, 500, "elastic");
 				txt.stop().attr({text: label + '\n' + value + "%"}).animate({opacity: 1}, 500, "bounce");
 			}).mouseout(function() {
-			    p.stop().animate({transform: "", opacity: 0.8}, 500, "elastic");
+			    p.stop().animate({fill: fill, transform: ""}, 500, "elastic");
 				circle.stop().animate({r: 1, opacity: 0}, 500);
 				txt.stop().attr({text: title}).animate({opacity: 0.8}, 500, "bounce");
 			});
 			circle.mouseover(function() {
-			    circle.stop().animate({r: r * 0.5, opacity: 1}, 500, "elastic");
+			    circle.stop().animate({r: r * 0.4, opacity: 1}, 500, "elastic");
 			})
 			
 			angle += angleplus;
@@ -93,12 +93,12 @@ function drawPie() {
 		titleLan = "语言",
 		titleComp = "其他",
 		titleDesign = "设计";
-	var circleLanAttr = {
+	var circleAttr = {
 	    stroke: "none",
-		fill: "r#DCE248-#2a2a2c",
+		fill: "#6A4E3E",
 		opacity: 0,
 	};
-	var circleFrontAttr = {
+	/*var circleFrontAttr = {
 	    stroke: "none",
 		fill: "r#79b429-#2a2a2c",
 		opacity: 0,
@@ -107,11 +107,11 @@ function drawPie() {
 	    stroke: "none",
 		fill: "r#B2FFED-#2a2a2c",
 		opacity: 0,
-	};
-	paper.pieChart(550, 120, 100, valuesFrontend, labelsFrontend, curStroke, fill, titleFron, circleFrontAttr);
-	paper.pieChart(240, 88, 80, valuesLanguage, labelsLanguage, curStroke, "#DCE248", titleLan, circleLanAttr);
-	paper.pieChart(400, 180, 60, valuesComp, labelsComp, curStroke, fill, titleComp, circleFrontAttr);
-	paper.pieChart(80, 120, 70, valuesDesign, labelsDesign, curStroke, "#B2FFED", titleDesign, circleDeAttr);
+	};*/
+	paper.pieChart(550, 120, 100, valuesFrontend, labelsFrontend, curStroke, fill, titleFron, circleAttr);
+	paper.pieChart(240, 88, 80, valuesLanguage, labelsLanguage, curStroke, "#DCE248", titleLan, circleAttr);
+	paper.pieChart(400, 180, 60, valuesComp, labelsComp, curStroke, fill, titleComp, circleAttr);
+	paper.pieChart(80, 120, 70, valuesDesign, labelsDesign, curStroke, "#B2FFED", titleDesign, circleAttr);
 }
 
 $(window).load(drawPie);

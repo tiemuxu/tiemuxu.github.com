@@ -37,15 +37,15 @@
 				
 			p.mouseover(function() {
 			    p.stop().animate({opacity:1,transform: "s1.1 1.1 " + cx + " " + cy}, 500, "elastic");
-				circle.stop().animate({r: 40, opacity: .5}, 500, "elastic");
+				circle.stop().animate({r: 40, opacity: 1}, 500, "elastic");
 				txt.stop().attr({text: label + '\n' + value + "%"}).animate({opacity: 1}, 500, "bounce");
 			}).mouseout(function() {
 			    p.stop().animate({transform: "", opacity: 0.8}, 500, "elastic");
-				circle.stop().animate({r: 1, opacity: 0.7}, 500, "elastic");
+				circle.stop().animate({r: 1, opacity: 0}, 500, "elastic");
 				txt.stop().attr({text: title}).animate({opacity: 0.8}, 500, "bounce");
 			});
 			circle.mouseover(function() {
-			    circle.stop().animate({r: 40, opacity: 0.5}, 500, "elastic");
+			    circle.stop().animate({r: 40, opacity: 1}, 500, "elastic");
 			})
 			
 			angle += angleplus;
@@ -96,17 +96,17 @@ function drawPie() {
 	var circleLanAttr = {
 	    stroke: "none",
 		fill: "r#DCE248-#2a2a2c",
-		opacity: 0.7,
+		opacity: 0,
 	};
 	var circleFrontAttr = {
 	    stroke: "none",
 		fill: "r#79b429-#2a2a2c",
-		opacity: 0.7,
+		opacity: 0,
 	};
 	var circleDeAttr = {
 	    stroke: "none",
 		fill: "r#B2FFED-#2a2a2c",
-		opacity: 0.7,
+		opacity: 0,
 	};
 	paper.pieChart(550, 120, 100, valuesFrontend, labelsFrontend, curStroke, fill, titleFron, circleFrontAttr);
 	paper.pieChart(240, 88, 80, valuesLanguage, labelsLanguage, curStroke, "#DCE248", titleLan, circleLanAttr);

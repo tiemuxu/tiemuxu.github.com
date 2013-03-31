@@ -21,7 +21,7 @@
 			y3 = cy + r * Math.sin(-endAngle * rad),
 			x4 = cx + 40 * Math.cos(-endAngle * rad),
 			y4 = cy + 40 * Math.sin(-endAngle * rad);
-		return paper.path(["M", x1, y1, "L", x2, y2, "A", r, r, 0, +(endAngle - startAngle > 180), 0, x3, y3, "L", x4, y4, "A", 40, 40, 0, +(endAngle - startAngle > 180), 1, x1, y1, "Z"]]).attr(params);
+		return paper.path(["M", x1, y1, "L", x2, y2, "A", r, r, 0, +(endAngle - startAngle > 180), 0, x3, y3, "L", x4, y4, "A", 40, 40, 0, +(endAngle - startAngle > 180), 1, x1, y1, "Z"]).attr(params);
 	}
 	
 	var circle = paper.circle(cx, cy, 1).attr(circleAttr).toFront(),

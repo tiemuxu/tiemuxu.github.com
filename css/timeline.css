@@ -2,7 +2,7 @@
 
 	#timeline {
 		width: 775px;
-		height: 180px;
+		height: 250px;
 		overflow: hidden;
 		margin-left: 25px;
 		position: relative;
@@ -59,7 +59,7 @@
 		
 		#issues {
 			width: 775px;
-			height: 180px;
+			height: 190px;
 			overflow: hidden;
 		}	
 			#issues li {
@@ -76,7 +76,7 @@
 				}
 				#issues li img {
 					float: left;
-					margin: 10px 200px 10px 50px;
+					margin: 45px 106px 45px 144px;
 					background: transparent;
 					-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)"; /* IE 8 */   
 					filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);/* IE 6 & 7 */      
@@ -95,16 +95,26 @@
 				#issues .char {
 				    float: right;
 				    width: 300px;
+					margin-top: 20px;
 					margin-right: 125px;
+				}
+				#issues li div.upArrow {
+				    position: relative;
+					left: 25px;
+				    width: 0px;
+					height: 0px;
+					border-bottom: 10px solid #79b429;
+					border-left: 10px solid #1f1f1f;
+					border-right: 10px solid #1f1f1f;
 				}
 				#issues li h2 {
 					color: #404040;
 					font-size: 30px;
-					margin: 10px 0;
+					margin: 0;
 					padding: 10px;
 					text-align: center;
 					width: 300px;
-					border-radius: 3px;
+					border-radius: 3px 3px 0 0;
 					background: #79b429;
 					/*text-shadow: #000 1px 1px 2px;*/
 				}
@@ -113,11 +123,12 @@
 					color: #404040;
 					font-weight: bold;
 					width: 300px;
-					margin: 10px 0;
+					height: 80px;
+					margin: 0;
 					padding: 10px;
 					text-align: center;
 					background: white;
-					border-radius: 3px;
+					border-radius: 0 0 3px 3px;
 					/*text-shadow: #000 1px 1px 2px;*/
 				}
 			
@@ -125,9 +136,8 @@
 		#next,
 		#prev {
 			position: absolute;
-			top: 0;
 			font-size: 70px;
-			top: 120px;
+			top: 130px;
 			width: 22px;
 			height: 38px;
 			background-position: 0 0;

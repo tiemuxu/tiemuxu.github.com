@@ -37,7 +37,7 @@
 				
 			p.mouseover(function() {
 			    p.stop().animate({fill: "#6A4E3E", transform: "s1.1 1.1 " + cx + " " + cy}, 500, "elastic");
-				circle.stop().animate({r: r * 0.4, opacity: 1}, 500, "elastic");
+				circle.stop().animate({r: r * 0.4, opacity: 1}, 1000, "elastic");
 				txt.stop().attr({text: label + '\n' + value + "%"}).animate({opacity: 1}, 500, "bounce");
 			}).mouseout(function() {
 			    p.stop().animate({fill: fill, transform: ""}, 500, "elastic");

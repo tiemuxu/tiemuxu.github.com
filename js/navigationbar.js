@@ -28,12 +28,22 @@ function moveUpFast() {
 function moveDownFast() {
     newmove("navigation", 0, 60, 1);
 }
+
+var isOut = false,
+    timer
 function moveUpSlowly(e) {
+    isOut = true
+    clearTimeout(timer)
     newmove("navigation", 0, 34, 2);
 	return stopDefault(e);
 }
 function moveDownSlowly(e) {
-    newmove("navigation", 0, 60, 2);
+    timer = setTimeout(function () {
+        if (!isOut) {
+            newmove("navigation", 0, 60, 2);
+        }
+    }, 300)
+    isOut = false
     return stopDefault(e);
 }
 

@@ -47,7 +47,7 @@
             {% if post.language == 'en' %}
             {{ post.content|strip_html|truncatewords:200 }}
             {% else %}
-            {{ post.content|strip_html|truncate:500 }}
+            {{ post.content|strip_html|truncatewords:500 }}
             {% endif %}
         {% endif %}
     </div>

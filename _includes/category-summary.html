@@ -46,9 +46,9 @@
 						    {{ post.summary|newline_to_br }}
 						{% else %}
 						    {% if post.language == 'en' %}
-							{{ post.content|strip_html|truncatewords:200 }}
+							{{ post.content|strip_html|truncatewords:200|newline_to_br }}
 							{% else %}
-							{{ post.content|strip_html|truncatewords:200 }}
+							{{ post.content|strip_html|truncatewords:200|newline_to_br }}
 							{% endif %}
 						{% endif %}
 					</div>

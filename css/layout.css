@@ -76,14 +76,24 @@ a:active {
 #header #search form #search-text {
   width: 180px;
   height: 30px;
+  padding-left: 30px;
   margin: 15px 50px 15px 0px;
+  background: url(../image/search.png) no-repeat;
   background-color: white;
   text-transform: lowercase;
   color: #888888;
   border-width: 0px;
   border-radius: 0px 3px 3px 0px;
 }
-#header #search #search-icon {
+    #search-text:focus {
+        -webkit-transition: all 0.5s ease-out;
+        -ms-transition: all 0.5s ease-out;
+        -o-transition: all 0.5s ease-out;
+        transition: all 0.5s ease-out;
+        outline: none;
+        box-shadow: 0 0 5px #79b429;
+    }
+/*#header #search #search-icon {
   position: absolute;
   top: 15px;
   right: 230px;
@@ -97,7 +107,7 @@ a:active {
 #header #search #search-icon img {
   margin-top: 3px;
   margin-bottom: 3px;
-}
+}*/
 
 
 /*************************************************************************************************/
@@ -151,10 +161,12 @@ a:active {
 }
 #menu li a {
   display: block;
-  height: 14px;
+  /*height: 14px;*/
+  height: 30px;
+  line-height: 30px;
   width: 50px;
   text-align: left;
-  padding: 8px 0px;
+  /*padding: 8px 0px;*/
 }
 #menu a:link,#menu a:visited {
   color: #404040;

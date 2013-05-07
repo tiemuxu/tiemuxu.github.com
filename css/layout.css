@@ -292,6 +292,13 @@ a:active {
   overflow: hidden;
 }
 
+div.category:hover, div.tag:hover, div.comment:hover {
+  -webkit-transition: all .50s ease-out;
+  -moz-transition: all .50s ease-out;
+  transition:  all .50s ease-out;
+  opacity: 1;
+}
+
 /*****************************************************/
 
 /*post content*/

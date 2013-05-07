@@ -79,11 +79,12 @@ a:active {
   padding-left: 30px;
   margin: 15px 50px 15px 0px;
   background: url(../image/search.png) no-repeat;
+  background-position: 2px 3px;
   background-color: white;
   text-transform: lowercase;
   color: #888888;
   border-width: 0px;
-  border-radius: 0px 3px 3px 0px;
+  border-radius: 3px;
 }
     #search-text:focus {
         -webkit-transition: all 0.5s ease-out;
@@ -91,7 +92,7 @@ a:active {
         -o-transition: all 0.5s ease-out;
         transition: all 0.5s ease-out;
         outline: none;
-        box-shadow: 0 0 5px #79b429;
+        box-shadow: 0 0 10px #79b429;
     }
 /*#header #search #search-icon {
   position: absolute;

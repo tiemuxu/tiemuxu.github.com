@@ -31,38 +31,46 @@ function moveDownFast() {
 
 var timer
 function moveUpSlowly(e) {
-    clearTimeout(timer)
-    newmove("navigation", 0, 34, 2);
-	return stopDefault(e);
+    var curScrollY = scrollY();
+    if ( curScrollY != 0) {
+        clearTimeout(timer)
+        newmove("navigation", 0, 34, 2);
+        return stopDefault(e);
+    }
+    
 }
 function moveDownSlowly(e) {
-    timer = setTimeout(function () {
-        newmove("navigation", 0, 60, 2);
-    }, 300)
-    return stopDefault(e);
+    var curScrollY = scrollY();
+    if (curScrollY != 0) {
+        timer = setTimeout(function () {
+            newmove("navigation", 0, 60, 2);
+        }, 300)
+        return stopDefault(e);
+    }
+    
 }
 
-scrollTimes = 0;
+//scrollTimes = 0;
 function scrollMoveNavbar(e) {
     var curScrollY = scrollY();
     
     if ( curScrollY > 0 ) {
-        if ( scrollTimes == 0 ) {
+        //if ( scrollTimes == 0 ) {
             moveUpFast();
-            $("#header-wrapper").mouseenter(moveDownSlowly);
+            //$("#header-wrapper").mouseenter(moveDownSlowly);
             //$("#header").mouseenter(moveDownSlowly);
-            $("#header-wrapper").mouseleave(moveUpSlowly);
+            //$("#header-wrapper").mouseleave(moveUpSlowly);
             //$("#navigation").mouseleave(moveUpSlowly);
-            scrollTimes += 1;
-        } 
+            //scrollTimes += 1;
+        //} 
         
     } else {
-        $("#header-wrapper").unbind("mouseenter", moveDownSlowly);
+        //$("#header-wrapper").unbind("mouseenter", moveDownSlowly);
         //$("#navigation").unbind("mouseenter", moveDownSlowly);
         //$("#navigation").unbind("mouseleave", moveUpSlowly);
-        $("#header-wrapper").unbind("mouseleave", moveUpSlowly);
+        //$("#header-wrapper").unbind("mouseleave", moveUpSlowly);
         moveDownFast();
-        scrollTimes = 0;   
+        //scrollTimes = 0;   
     }  
     
     return stopDefault(e);
@@ -135,7 +143,12 @@ function clickBackTop() {
 
 domReady(highlightPage);
 domReady(changeNavIcon);
-domReady(function() {
+/*domReady(function() {
     addEvent(document, "scroll", scrollMoveNavbar);
-});
+});*/
 domReady(clickBackTop);
+$(window).load(function() {
+    $("#header-wrapper").mouseenter(moveDownSlowly);
+    $("#header-wrapper").mouseleave(moveUpSlowly);
+    $(document).scroll(scrollMoveNavbar);
+})

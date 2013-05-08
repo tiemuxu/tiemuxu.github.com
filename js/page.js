@@ -84,7 +84,7 @@ function highlightRelated() {
 /***************************************************************************************************/
 
 $(document).ready(function() {
-	initPageHeight();
+	//initPageHeight();
 	initRelated();
 	highlightRelated();
 });

@@ -18,7 +18,7 @@
                 {% endif %}
                         {{ category[0] }}
                     </a>
-                    ({{ category[1].size }})
+                    <span>({{ category[1].size }})</span>
             </li>
             {% endfor %}
         </ul>
@@ -31,7 +31,7 @@
                 <a href="/tags.html#{{ tag[0] }}">
                     {{ tag[0] }}
                 </a>
-                ({{ tag[1].size }})
+                <span>({{ tag[1].size }})</span>
             </li>
             {% endfor %}
         </ul>

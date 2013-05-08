@@ -354,6 +354,10 @@ div.category:hover, div.tag:hover, div.comment:hover {
 .sidebar #clock {
  padding: 0px;
 }
+.sidebar span {
+  display: inline-block;
+  float: right;
+}
 
 /*******************************************************************************************/
 /*******************************************************************************************/

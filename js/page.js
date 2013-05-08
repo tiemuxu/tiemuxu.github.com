@@ -83,7 +83,10 @@ function highlightRelated() {
 }
 /***************************************************************************************************/
 
-$(document).ready(initPageHeight);
-domReady(initRelated);
+$(document).ready(function() {
+	initPageHeight();
+	initRelated();
+	highlightRelated();
+});
+
 //domReady(overHighlight);
-domReady(highlightRelated);

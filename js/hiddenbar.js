@@ -89,7 +89,7 @@ function moveSwitch() {
 }*/
 
 // DOM可用时执行
-domReady(moveSwitch);
+$(document).ready(moveSwitch);
 //domReady(changeSocialIcon);
 
 

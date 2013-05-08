@@ -23,3 +23,7 @@ main_menu:
   url: /essay.html
 - label: 关于
   url: /about.html
+
+meta:
+	author:
+		gcse: 006457635157451804399:jraxz7uuhew

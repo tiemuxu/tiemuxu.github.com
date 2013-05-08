@@ -329,7 +329,10 @@ div.category:hover, div.tag:hover, div.comment:hover {
   color: #79b429;
   margin-bottom: 20px;
 }
-
+#disqus_thread {
+  width: 520px;
+  margin-left: 150px;
+}
 /***************************************************************************************/
 /*sidebar*/
 #sidebar-container {

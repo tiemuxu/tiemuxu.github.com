@@ -73,7 +73,7 @@ a:active {
   height: 60px;
   margin-left: 70px;
 }
-#header #search form #search-text {
+#header #search form #q {
   width: 180px;
   height: 30px;
   padding-left: 30px;
@@ -86,7 +86,7 @@ a:active {
   border-width: 0px;
   border-radius: 3px;
 }
-    #search-text:focus {
+    #q:focus {
         -webkit-transition: all 0.5s ease-out;
         -ms-transition: all 0.5s ease-out;
         -o-transition: all 0.5s ease-out;

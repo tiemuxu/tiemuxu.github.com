@@ -65,11 +65,11 @@ Tiemuxu.HiddenBar = function() {
         // Event listeners
         $("div#hiddenBar").mouseenter(function(e) {
             moveLeft();
-            stopDefault(e);
+            // stopDefault(e);
         });
         $("div#hiddenBar").mouseleave(function(e) {
             moveRight();
-            stopDefault(e);
+            // stopDefault(e);
         });
     }
 

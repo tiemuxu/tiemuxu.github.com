@@ -6,4 +6,4 @@ var widgets = new Tiemuxu.Widgets();
 navigationbar.init();
 hiddenbar.init();
 blogpage.init();
-widgets = init();
+widgets.init();

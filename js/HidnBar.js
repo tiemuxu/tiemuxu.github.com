@@ -25,7 +25,7 @@ Tiemuxu.HiddenBar = function() {
         elem.movement = setTimeout(move, interval);
     }
 
-    function moveRight() {
+    function moveLeft() {
          moveElem("hiddenBar", 0, 110, 1);
         var elem = Tiemuxu.id("hide-sidebar");
         setTimeout(function() {
@@ -33,7 +33,7 @@ Tiemuxu.HiddenBar = function() {
         },200);
     };
 
-    function moveReft() {
+    function moveRight() {
         var elem = Tiemuxu.id("hide-sidebar");
         Tiemuxu.fadeOut(elem, 2);
         setTimeout(function() {

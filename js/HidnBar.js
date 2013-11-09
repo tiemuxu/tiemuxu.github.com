@@ -1,29 +1,52 @@
 // Show or hide the sidebar containing some of my information
 Tiemuxu.HiddenBar = function() {
     // move element to a specified position
-    function moveElem(elemID, final_x, final_y, interval) {
+    // function moveElem(elemID, final_x, final_y, interval) {
+    //     var elem = Tiemuxu.id(elemID);
+    //     if (elem.movement) {  
+    //         clearTimeout(elem.movement);       // 消除重影
+    //     }
+    //     var xpos = parseFloat(Tiemuxu.getStyle(elem, "right"));
+    //     var ypos = parseFloat(Tiemuxu.getStyle(elem, "top"));
+        
+    //     if ( xpos == final_x && ypos == final_y ) {
+    //         return true;
+    //     }
+        
+    //     var dist_x = ((final_x - xpos) / 10);
+    //     var dist_y = ((final_y - ypos) / 10);
+    //     xpos = xpos + dist_x;
+    //     ypos = ypos + dist_y;
+        
+    //     elem.style.right = xpos + "px";
+    //     elem.style.top = ypos + "px";
+        
+    //     var move = "moveElem('"+elemID+"',"+final_x+","+final_y+","+interval+")";
+    //     elem.movement = setTimeout(move, interval);
+    // }
+
+    function moveElem(elemID, final_x, final_y, speed) {
         var elem = Tiemuxu.id(elemID);
-        if (elem.movement) {  
-            clearTimeout(elem.movement);       // 消除重影
-        }
-        var xpos = parseFloat(Tiemuxu.getStyle(elem, "right"));
+        var xpos = parseFloat(Tiemuxu.getStyle(elem, "left"));
         var ypos = parseFloat(Tiemuxu.getStyle(elem, "top"));
         
         if ( xpos == final_x && ypos == final_y ) {
             return true;
         }
         
-        var dist_x = ((final_x - xpos) / 10);
-        var dist_y = ((final_y - ypos) / 10);
-        xpos = xpos + dist_x;
-        ypos = ypos + dist_y;
+        var dist_x = final_x - xpos;
+        var dist_y = final_y - ypos;
         
-        elem.style.right = xpos + "px";
-        elem.style.top = ypos + "px";
-        
-        var move = "moveElem('"+elemID+"',"+final_x+","+final_y+","+interval+")";
-        elem.movement = setTimeout(move, interval);
-    }
+        for ( var i = 0; i <= 100; i += 5 ) {
+            (function() {
+                var pos = i;
+                setTimeout(function() {
+                    elem.style.left = xpos + ((pos / 100) * dist_x) + "px";
+                    elem.style.top = ypos + ((pos / 100) * dist_y) + "px";
+                }, (pos + 1) * speed);
+            })();
+        }
+    };
 
     function moveLeft() {
          moveElem("hiddenBar", 0, 110, 1);
@@ -39,7 +62,7 @@ Tiemuxu.HiddenBar = function() {
         setTimeout(function() {
             moveElem("hiddenBar", -420, 110, 1);
         },202);  
-    }
+    };
 
     // 改变img元素的src属性
     function changeSrc() {

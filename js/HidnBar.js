@@ -60,7 +60,7 @@ Tiemuxu.HiddenBar = function() {
         attr(this, "src", recSrc);
     }
 
-    this.moveSwitch = function() {
+    this.init = function() {
         // Event listeners
         $("div#hiddenBar").mouseenter(function(e) {
             moveLeft();

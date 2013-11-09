@@ -31,7 +31,7 @@ a:link {
 a:visited {
   color: #79b429;
 }
-a:hover: {
+a:hover {
   color: #79b429;
 }
 a:active {
@@ -361,7 +361,7 @@ div.category:hover, div.tag:hover, div.comment:hover {
 
 
 div.clear {
-	with: 100%;
+	width: 100%;
 	height: 2px;
 	clear: right;
 }

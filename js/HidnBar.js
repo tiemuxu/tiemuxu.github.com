@@ -27,7 +27,7 @@ Tiemuxu.HiddenBar = function() {
 
     function moveElem(elemID, final_x, final_y, speed) {
         var elem = Tiemuxu.id(elemID);
-        var xpos = parseFloat(Tiemuxu.getStyle(elem, "left"));
+        var xpos = parseFloat(Tiemuxu.getStyle(elem, "right"));
         var ypos = parseFloat(Tiemuxu.getStyle(elem, "top"));
         
         if ( xpos == final_x && ypos == final_y ) {
@@ -41,7 +41,7 @@ Tiemuxu.HiddenBar = function() {
             (function() {
                 var pos = i;
                 setTimeout(function() {
-                    elem.style.left = xpos + ((pos / 100) * dist_x) + "px";
+                    elem.style.right = xpos + ((pos / 100) * dist_x) + "px";
                     elem.style.top = ypos + ((pos / 100) * dist_y) + "px";
                 }, (pos + 1) * speed);
             })();

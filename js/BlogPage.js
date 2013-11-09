@@ -9,7 +9,7 @@ Tiemuxu.Page = function() {
 		    page.style.height = sidebarHeight + "px";
 		}
 	}
-s
+
 	function initRelated() {
 	    var related = tiemuxu.id("relatedPost");
 		if ( related != null ) {

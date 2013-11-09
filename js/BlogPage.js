@@ -11,7 +11,7 @@ Tiemuxu.Page = function() {
 	}
 
 	function initRelated() {
-	    var related = tiemuxu.id("relatedPost");
+	    var related = Tiemuxu.id("relatedPost");
 		if ( related != null ) {
 		    var content = $(".content")[0];
 		    var timeBox = $(".post-time")[0];

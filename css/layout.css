@@ -171,16 +171,16 @@ a:active {
 }
 #menu a:link,#menu a:visited {
   color: #404040;
-  -webkit-transition: color .50s ease-out;
-  -moz-transition: color .50s ease-out;
-  transition:  color .50s ease-out;
+  -webkit-transition: color .30s ease-out;
+  -moz-transition: color .30s ease-out;
+  transition:  color .30s ease-out;
   background-color: transparent;
 }
 #menu a:hover {
   color: #79b429;
-  -webkit-transition: color .50s ease-out;
-  -moz-transition: color .50s ease-out;
-  transition:  color .50s ease-out;
+  -webkit-transition: color .30s ease-out;
+  -moz-transition: color .30s ease-out;
+  transition:  color .30s ease-out;
 }
 #menu a.here:link,
 #menu a.here:visited,

@@ -1,0 +1,36 @@
+<div id="header-wrapper">
+    <div id="header">
+        <div id="logo">
+            <img src="/image/logo.gif" alt="Logo" />
+        </div>
+        <div id="search">
+            <form id="cse" method="get" action="http://www.google.com/cse">
+                <input value="006457635157451804399:jraxz7uuhew" name="cx" type="hidden" />
+                <input value="FORID:11" name="cof" type="hidden" />
+                <input type="text" name="q" id="q" placeholder="search" />
+                <input name="sa" class="sbutton" type="submit" style="display: none" />
+            </form>
+            <!--<div id="search-icon">
+                <img src="/image/search.png" alt="Search Icon" />
+            </div>-->
+        </div>
+
+    </div>
+	<div id="navigation">
+        <div id="rss">
+            <a href="#"><img src="/image/rssbw.png" alt="Rss" title="Rss" /></a>
+        </div>
+        <div id="write">
+            <a href="#"><img src="/image/writebw.png" alt="Leave me a message" title="给我留言" /></a>
+        </div>
+        <div id="nav-wrapper">
+            <div id="menu">
+                <ul>
+                    {% for menu in site.main_menu %}
+                        <li><a href="{{menu.url}}">{{menu.label}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

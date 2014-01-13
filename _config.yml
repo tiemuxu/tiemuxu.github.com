@@ -2,7 +2,6 @@ markdown: rdiscount
 auto: true
 pygments: true
 url: http://tiemuxu.github.com
-baseurl: /MyBlog
 paginate: 10
 title: Front Wind
 years:

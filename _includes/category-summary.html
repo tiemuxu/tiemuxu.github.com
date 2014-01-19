@@ -12,11 +12,11 @@
 						<div class="time"><p class="day">{{post.date | date: "%d"}}</p><p class="month_year">{{post.date | date: "%b·%Y"}}</p></div>
 						<div class="category">
 						    <p>
-							    {% if c == '前端' %}
+							    {% if c == 'frontend' %}
 								<a href="/frontend.html">
-								{% elsif c == '翻译' %}
+								{% elsif c == 'translation' %}
 								<a href="/translation.html">
-								{% elsif c == '随笔' %}
+								{% elsif c == 'essay' %}
 								<a href="/essay.html">
 								{% endif %}
 								    {{ c }}

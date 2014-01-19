@@ -9,11 +9,11 @@
         {% if post.categories[0] %}
             <p>
                 {% for c in post.categories %}
-                    {% if c == '前端' %}
+                    {% if c == 'frontend' %}
                     <a href="/frontend.html"> 
-                    {% elsif c == '翻译' %}
+                    {% elsif c == 'translation' %}
                     <a href="/translation.html">
-                    {% elsif c == '随笔' %}
+                    {% elsif c == 'essay' %}
                     <a href="/essay.html">
                     {% endif %}
                         {{c}} 

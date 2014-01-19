@@ -13,11 +13,11 @@ layout: main
 		        {% if page.categories %}
 			        <p>
 				    {% for c in page.categories %}
-				        {% if c == '前端' %}
+				        {% if c == 'frontend' %}
 					    <a href="/frontend.html">
-					    {% elsif c == '翻译' %}
+					    {% elsif c == 'translation' %}
 					    <a href="/translation.html">
-					    {% elsif c == '随笔' %}
+					    {% elsif c == 'essay' %}
 					    <a href="/essay.html">
 					    {% endif %}
 					        {{c}}

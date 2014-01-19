@@ -22,7 +22,7 @@ h3 {
 }
 
 a {
-  font-weight: bold;
+  /*font-weight: bold;*/
   text-decoration: none;
 }
 a:link {
@@ -38,6 +38,9 @@ a:active {
   color: #79b429;
 }
 
+b {
+  font-weight: 700;
+}
 /*******************************************************************************/
 /*************************************************************************************************/
 
@@ -158,14 +161,15 @@ a:active {
 }
 #menu li {
   float: left;
-  width: 100px;
+  width: auto;
+  margin-right: 50px;
 }
 #menu li a {
   display: block;
   /*height: 14px;*/
   height: 30px;
   line-height: 30px;
-  width: 50px;
+  width: auto;
   text-align: left;
   /*padding: 8px 0px;*/
 }
@@ -270,10 +274,12 @@ a:active {
   opacity: 0.8;
 }
 .post-time .category p {
-  margin: 9px 10px 9px 10px;
+  margin: 0 10px;
   padding-left: 20px;
-  height: 12px;
+  height: 30px;
+  line-height: 30px;
   background: url(../image/category.gif) no-repeat;
+  background-position: 0 9px;
   overflow: hidden;
 }
 .post-time .tag {
@@ -286,10 +292,12 @@ a:active {
   opacity: 0.8;
 }
 .post-time .tag p {
-  margin: 9px 10px 9px 10px;
+  margin: 0 10px;
   padding-left: 20px;
-  height: 12px;
+  height: 30px;
+  line-height: 30px;
   background: url(../image/tag.gif) no-repeat;
+  background-position: 0 9px;
   overflow: hidden;
 }
 .post-time .comment {
@@ -302,12 +310,15 @@ a:active {
   opacity: 0.8;
 }
 .post-time .comment p {
-  margin: 9px 10px 9px 10px;
+  margin: 0 10px;
   padding-left: 20px;
-  height: 12px;
+  height: 30px;
+  line-height: 30px;
   background: url(../image/comment.gif) no-repeat;
+  background-position: 0 9px;
   overflow: hidden;
 }
+
 
 div.category:hover, div.tag:hover, div.comment:hover {
   -webkit-transition: all .50s ease-out;
@@ -327,7 +338,7 @@ div.category:hover, div.tag:hover, div.comment:hover {
   font-size: 14px;
 }
 .content h2 {
-  font-weight: bold;
+  font-weight: 100;
   font-size: 30px;
   line-height: 1;
   color: #79b429;
@@ -337,7 +348,19 @@ div.category:hover, div.tag:hover, div.comment:hover {
 	font: 14px/1.5 "Microsoft Yahei","Microsoft JhengHei",Pmingliu,"Segoe UI","Segoe UI Web Regular","Segoe UI Symbol","Helvetica Neue","BBAlpha Sans","S60 Sans",Arial,"sans-serif";
 	font-weight: lighter;
 }
-
+.content p a {
+  text-decoration: underline;
+}
+.content .cmdLine {
+  margin: 5px 20px;
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+.content .cmdLine p {
+  font: 12px/1.5 Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
 #disqus_thread {
   width: 560px;
   margin-left: 170px;

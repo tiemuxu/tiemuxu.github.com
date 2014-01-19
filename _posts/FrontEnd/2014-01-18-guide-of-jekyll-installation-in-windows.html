@@ -1,0 +1,91 @@
+---
+layout: post
+title: Windows 下安装 jekyll
+categories: frontend
+tags: jekyll github
+---
+<div>
+	<p>
+		自学了一点前端开发之后，为了学以致用，也想将那些零碎的知识贯通起来，真正做一个略微大些的项目，便利用 <a href="https://github.com/" target="_blank">github</a> 的 <a href="http://pages.github.com/" target="_blank">pages</a> 搭建了这个博客。具体的搭建过程和概念的解释可参考<a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank">这里</a>。值得一提的是，我在搭建博客的时候创建的是这样的 repository：tiemuxu.github.com，并在 master 分支下做所有操作。建议新手可同时参考另一篇精简的<a href="http://hzmook.github.io/2012/07/01/use-jekyll-build-blog-on-github.html" target="_blank">文章</a>，或者自行 Google ，相信最终都能够将自己的博客搭建出来。这里就不再赘述。
+	</p>
+	<br />
+	<p>
+		在开发过程中，需要将代码 commit 到 github 上，才能查看效果。因此常常发生的情况是，新的 commit 只是为了修复上一次的某些零碎 bug，如果人再粗心点，提交代码后才发现还有漏网之鱼，于是还得再来一次，如此反复。导致 github 上的 commit 历史很难有 milestone 式的版本记录，同时也增加了开发的繁琐度。那么在本地配置开发环境就显得尤为必要了。github 使用 <a href="http://jekyllrb.com/" target="_blank">jekyll</a> 来将网页源码转变为网页。因此，所需的开发环境就是本地的 jekyll。
+	</p>
+	<br />
+	<p>
+		<b>首先</b>，需要安装 Ruby 环境和 RubyGem。最简单有效的方式是使用 <a href="http://rubyinstaller.org/downloads/" target="_blank">RubyInstaller</a>，下载安装即可（我安装的是最新版本 Ruby2.0.0-p353）。
+	</p>
+	<br />
+	<p>
+	 	<b>然后</b>，还需要安装 <a href="http://rubyinstaller.org/downloads/">Development Kit</a>(DevKit)，同样选择合适的版本。下载后运行该 exe 文件，将其解压到任意位置，这里建议解压为 'C:\Devkit' ,然后运行 'Start Command Prompt with Ruby'（类似于cmd的命令行控制台），通过命令行安装：
+	</p>
+	<div class="cmdLine">
+		<p>C:\Users\muxu&gt;cd C:\DevKit</p>
+		<p>C:\DevKit&gt;ruby dk.rb init</p>
+		<p>C:\DevKit&gt;ruby dk.rb install</p>
+	</div>
+	<p>
+		显示如下信息时表示 DevKit 已经安装成功：
+	</p>
+	<div class="cmdLine">
+		<p>[INFO] Updating convenience notice gem override for 'C:/ruby200'</p>
+		<p>[INFO] Installing 'C:/ruby200/lib/ruby/site_ruby/devkit.rb'</p>
+	</div>
+	<br />
+	<p>
+		<b>接下来</b>，可以安装 jekyll 了，在相同的目录下运行：
+	</p>
+	<div class="cmdLine">
+		<p>C:\DevKit&gt;gem install jekyll</p>
+	</div>
+	<br />
+	<p>
+		<b>最后</b>，再来安装 Rdiscount，用以解析 Markdown 标记。如果使用的是 Textile，则安装 Kramdown：
+	</p>
+	<div class="cmdLine">
+		<p>C:\DevKit&gt;gem install rdiscount</p>		
+	</div>
+	<br />
+	<p>
+		通过以上步骤，所有的环境和依赖包都已安装成功。进入博客的仓库目录（如 cd tiemuxu.github.com），用下面的命令来启动 jekyll：
+	</p>
+	<div class="cmdLine">
+		<p>
+			C:\Users\muxu\tiemuxu.github.com&gt;jekyll serve
+		</p>
+	</div>
+	<br />
+	<p>
+		本以为能够大功告成，控制台里却出现类似如下的错误提示：
+	</p>
+	<div class="cmdLine">
+		<p>
+			error: invalid byte sequence in GBK.
+		</p>
+	</div>
+	<p>
+		Google 后得知，博客的源代码中包含中文字符，而 Ruby 控制台并不支持UTF-8编码。那么解决问题的思路就很明显了，只需要想办法使其支持就行。 Google 再次帮我找到了答案——在执行 jekyll 命令前，可以用命令将控制台的代码格式转为 UTF-8：
+	</p>
+	<div class="cmdLine">
+		<p>C:\Users\tiemuxu.github.com&gt;chcp 65001</p>
+		<p>C:\Users\tiemuxu.github.com&gt;jekyll serve</p>
+	</div>
+	<p>然后终于在控制台里看到成功运行的提示：</p>
+	<div class="cmdLine">
+		<p>Configuration file: C:/Users/muxu/tiemuxu.github.com/_config.yml</p>
+		<p>Source: C:/Users/muxu/tiemuxu.github.com</p>
+		<p>Destination: C:/Users/muxu/tiemuxu.github.com/_site</p>
+		<p>Genetating...: done.</p>
+		<p>Server address: https://127.0.0.1:4000</p>
+		<p>Server running... press ctrl-c to stop.</p>
+	</div>
+	<br />
+	<p>
+		可是事情并没有结束，当我满怀期待地在浏览器里访问该地址时，看到的却是 'Not Found' 的错误，郁闷到差点一口老血喷出来。我平静下来想了想，作为技术人员希望事情一切顺利从来就是个小概率事件。如同在开发过程中，不管自己觉得代码写得再如何完美，也总会有 bug 存在。所以遇到问题不要着急上火，而是继续搜寻<a href="https://github.com/jekyll/jekyll/issues/1342" target="_blank">答案</a>。原来需要把博客代码仓库里的配置文件 _config.yml 中的 baseurl 删除，然后重启服务。谢天谢地，它终于跑起来了，这几乎快要让我“泪流满面”，连在客厅里打电话的室友都以为我疯了，连声问我“何弃疗”。
+	</p>
+	<br />
+	<p>
+		哦，对了，如果默认的 'server address' 是 '0.0.0.0:4000' 的话，可以到 'C:\Ruby200\lib\ruby\gems\2.0.0\gems\jekyll-1.4.2\lib\jekyll' 目录下修改 configuration 文件，改成自己喜欢的 IP 和端口。到此为止，本地的开发环境已经搭建完毕，之后提交代码或者写了新的文章，就可以先在本地预览，将结果调整到自己最满意的状态，再一次性提交它们，岂不是方便而高效吗？ 
+	</p>
+</div>

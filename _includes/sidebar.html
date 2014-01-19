@@ -9,11 +9,11 @@
         <ul class="sidebar-info">
             {% for category in site.categories %}
             <li>
-                {% if caregory[0] == '前端' %}
+                {% if caregory[0] == 'frontend' %}
                     <a href="/frontend.html">
-                {% elsif category[0] == '翻译' %}
+                {% elsif category[0] == 'translation' %}
                     <a href="/translation.html">
-                {% elsif category[0] == '随笔' %}
+                {% elsif category[0] == 'essay' %}
                     <a href="/essay.html">
                 {% endif %}
                         {{ category[0] }}

@@ -14,11 +14,11 @@ years:
 main_menu:
 - label: Home
   url: /index.html
-- label: 前端
+- label: FrontEnd
   url: /frontend.html
-- label: 翻译
+- label: Translation
   url: /translation.html
-- label: 随笔
+- label: Essay
   url: /essay.html
-- label: 关于
+- label: About
   url: /about.html

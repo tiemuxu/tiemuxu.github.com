@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>一夜秋凉 - Front Wind</title>
+    <title>Windows 下安装 jekyll - Front Wind</title>
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" media="screen" href="/css/layout.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="/css/post.css" />
@@ -170,17 +170,17 @@
 	    <div class="post-time">
 	        <div class="arrow"></div>
 		    <div class="time">
-		        <p class="day">09</p>
-			    <p class="month_year">2013·Nov</p>
+		        <p class="day">18</p>
+			    <p class="month_year">2014·Jan</p>
 		    </div>
 		    <div class="category">
 		        
 			        <p>
 				    
 				        
-					    <a href="/essay.html">
+					    <a href="/frontend.html">
 					    
-					        essay
+					        frontend
 					    </a>
 				    
 				    </p>
@@ -191,14 +191,18 @@
 			        <p>
 				    
 				        
-					    <a href="/tags.html#情感">情感</a>
+					    <a href="/tags.html#jekyll">jekyll</a>,
+					    
+				    
+				        
+					    <a href="/tags.html#github">github</a>
 					    
 				    
 				    </p>
 			    
 		    </div>
 		    <div class="comment">
-		        <p><a href="/essay/2013/11/09/Autumn-Comes-After-One-Night.html#disqus_thread">0</a></p>
+		        <p><a href="/frontend/2014/01/18/guide-of-jekyll-installation-in-windows.html#disqus_thread">0</a></p>
 		    </div>
 	    </div>
 	    <!--<div id="relatedPost">
@@ -210,17 +214,91 @@
 	    </div>-->
 	</div>
 	<div class="content">
-	    <h2>一夜秋凉</h2>
+	    <h2>Windows 下安装 jekyll</h2>
 		<div>
-	<p>上海似乎是在那个夜晚突然就凉了下来，我在翌日的清晨便切切实实的感受到了秋天的凉意，心里结了霜。我曾无数次想过这样的状况，一觉醒来，梦想跟着破灭，我该怎么办呢？几番纠结也没有答案。然后那天早晨，担心的事情就那么发生了，有些措手不及。最后还是鼓起勇气要让自己勇敢一些。一边说着没事的，我挺得住，一边调整呼吸从被窝里爬起来。走出房门，又莫名其妙走进来，打开衣柜再关上，再打开再关上，最后呆坐在那里，半天才回过神来。那个时候我终于意识到，从今往后我的世界就要不一样了。</p>
+	<p>
+		自学了一点前端开发之后，为了学以致用，也想将那些零碎的知识贯通起来，真正做一个略微大些的项目，便利用 <a href="https://github.com/" target="_blank">github</a> 的 <a href="http://pages.github.com/" target="_blank">pages</a> 搭建了这个博客。具体的搭建过程和概念的解释可参考<a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank">这里</a>。值得一提的是，我在搭建博客的时候创建的是这样的 repository：tiemuxu.github.com，并在 master 分支下做所有操作。建议新手可同时参考另一篇精简的<a href="http://hzmook.github.io/2012/07/01/use-jekyll-build-blog-on-github.html" target="_blank">文章</a>，或者自行 Google ，相信最终都能够将自己的博客搭建出来。这里就不再赘述。
+	</p>
 	<br />
-	<p>时间再往前一些，我刚经历了一场生死的考验。如果我就那样走了，家人就要真正的支离破碎，沦为邻里的闲谈，渐渐地再被遗忘，最后一缕青烟，随风飘散，如同从来没有存在过一般。而你，拉黑的将是一个不会再有更新的帐号，你会认为他薄情寡义，根本不值得去珍惜，黑得一点儿也不冤枉。我想这世间一定有着神氏的存在，他在我的劫数里附加了化解的办法，否则何以在我意识不清之前告诉我快去求助，何以在百步之内就让我看见醒目的红十字标识，又何以在不远的地方就有医院。种种巧合，差了一条都会叫我一命呜呼。真是要感谢上苍，他体恤我尘缘未了，知道我有爱有梦想，也念我在复杂的人性中稍微多了那么一丁点善良，是值得活下去的小家伙。我想起“大难不死必有后福”的古语，还有当下时兴的段子，药不能停，不要放弃治疗，来给自己加油打气。我勇敢的躺在病床上，想着因此换得一个大大的福报，将来能够让我得偿所愿，那么所有的磨难与折腾都很值得。</p>
+	<p>
+		在开发过程中，需要将代码 commit 到 github 上，才能查看效果。因此常常发生的情况是，新的 commit 只是为了修复上一次的某些零碎 bug，如果人再粗心点，提交代码后才发现还有漏网之鱼，于是还得再来一次，如此反复。导致 github 上的 commit 历史很难有 milestone 式的版本记录，同时也增加了开发的繁琐度。那么在本地配置开发环境就显得尤为必要了。github 使用 <a href="http://jekyllrb.com/" target="_blank">jekyll</a> 来将网页源码转变为网页。因此，所需的开发环境就是本地的 jekyll。
+	</p>
 	<br />
-	<p>再回到那个夜晚。其实在我出院的时候，还是有些心律不齐，加上药物的影响，大脑的供氧并没有恢复全盛的水平，整日晕乎乎的，如同电压不足的仪器一样，无法正常运转，心情自然大打折扣。说来也挺奇怪，那天晚上我异常的清醒，就像弥天大雾突然烟消云散一样。我有很多话想要分享，最近的遭遇，死里逃生的惊险，以及在病床上关于你的话语。拖延症偏偏又在这个时候席卷了我的大脑，让我再等等看，如果明天还像今晚一样头脑清醒，再来诉说衷肠。还能够底气十足地回答，我已经大好，不用担心。谁能想到竟会一夜变天呢？而我再度陷入昏沉的迷雾中，还在这突如其来的寒意里病了一场。</p>
+	<p>
+		<b>首先</b>，需要安装 Ruby 环境和 RubyGem。最简单有效的方式是使用 <a href="http://rubyinstaller.org/downloads/" target="_blank">RubyInstaller</a>，下载安装即可（我安装的是最新版本 Ruby2.0.0-p353）。
+	</p>
 	<br />
-	<p>在病中，我坚强地整理自己，努力把情绪调整到最稳定的频率，不自暴自弃，也不歇斯底里，还要接受这已然的定局。既然无法给人温暖，至少不要使他受伤。再说，我不过是回到我该有的位置上去，本该默默无闻，本该远远欣赏，能够相识一场已是奇异的恩典。我回头张望过去的三年时光，好友走出了对“钢琴妹子”爱而不得的惆怅，又接受了“青岛妹妹”早就心有所属的事实，而我依旧对你念念不忘。他总说我太年轻，赌我明年就能忘，我说我们的情况不一样，我只是还没有准备好而已。于是，我们的赌约我赢了一次又一次。三年了，我时时刻刻都在想着如何给自己增加勇气，毫不松懈地努力着想要靠近一些。只是事情都不太顺利而已。我不习惯诉苦，并不表示我就真的铁石心肠。其实我们不就是同一种人吗？嘴比谁都硬，心却比任何人都要软。而我所谓的奋斗，不过是解决我自身的问题，还为着家人的小小幸福而已。我从没想过自己要做惊天动地的大事，事实上，我只是一个交际圈子狭小，朋友屈指可数，饭局上只喝果汁的怪咖罢了。所以我才抛弃专业，逃离工程界，进入IT圈，只因他们是一群让我安心的技术宅男，并在饭桌上尊重我的选择。</p>
+	<p>
+	 	<b>然后</b>，还需要安装 <a href="http://rubyinstaller.org/downloads/">Development Kit</a>(DevKit)，同样选择合适的版本。下载后运行该 exe 文件，将其解压到任意位置，这里建议解压为 'C:\Devkit' ,然后运行 'Start Command Prompt with Ruby'（类似于cmd的命令行控制台），通过命令行安装：
+	</p>
+	<div class="cmdLine">
+		<p>C:\Users\muxu&gt;cd C:\DevKit</p>
+		<p>C:\DevKit&gt;ruby dk.rb init</p>
+		<p>C:\DevKit&gt;ruby dk.rb install</p>
+	</div>
+	<p>
+		显示如下信息时表示 DevKit 已经安装成功：
+	</p>
+	<div class="cmdLine">
+		<p>[INFO] Updating convenience notice gem override for 'C:/ruby200'</p>
+		<p>[INFO] Installing 'C:/ruby200/lib/ruby/site_ruby/devkit.rb'</p>
+	</div>
 	<br />
-	<p>一夜秋凉，那个夜晚如同重要的时间节点，对你来说，之前是应该抛弃的陈旧时光，之后则是值得期待的幸福岁月；然而对于我来说，它只是把原本不大的希望变得更加渺茫而已。可是无论如何，上帝还欠我一个福报，我希望能够用来找回你，不，为了避免暧昧的嫌疑，应该是找回像你这样的人，要花多少时光我都愿意。</p>
+	<p>
+		<b>接下来</b>，可以安装 jekyll 了，在相同的目录下运行：
+	</p>
+	<div class="cmdLine">
+		<p>C:\DevKit&gt;gem install jekyll</p>
+	</div>
+	<br />
+	<p>
+		<b>最后</b>，再来安装 Rdiscount，用以解析 Markdown 标记。如果使用的是 Textile，则安装 Kramdown：
+	</p>
+	<div class="cmdLine">
+		<p>C:\DevKit&gt;gem install rdiscount</p>		
+	</div>
+	<br />
+	<p>
+		通过以上步骤，所有的环境和依赖包都已安装成功。进入博客的仓库目录（如 cd tiemuxu.github.com），用下面的命令来启动 jekyll：
+	</p>
+	<div class="cmdLine">
+		<p>
+			C:\Users\muxu\tiemuxu.github.com&gt;jekyll serve
+		</p>
+	</div>
+	<br />
+	<p>
+		本以为能够大功告成，控制台里却出现类似如下的错误提示：
+	</p>
+	<div class="cmdLine">
+		<p>
+			error: invalid byte sequence in GBK.
+		</p>
+	</div>
+	<p>
+		Google 后得知，博客的源代码中包含中文字符，而 Ruby 控制台并不支持UTF-8编码。那么解决问题的思路就很明显了，只需要想办法使其支持就行。 Google 再次帮我找到了答案——在执行 jekyll 命令前，可以用命令将控制台的代码格式转为 UTF-8：
+	</p>
+	<div class="cmdLine">
+		<p>C:\Users\tiemuxu.github.com&gt;chcp 65001</p>
+		<p>C:\Users\tiemuxu.github.com&gt;jekyll serve</p>
+	</div>
+	<p>然后终于在控制台里看到成功运行的提示：</p>
+	<div class="cmdLine">
+		<p>Configuration file: C:/Users/muxu/tiemuxu.github.com/_config.yml</p>
+		<p>Source: C:/Users/muxu/tiemuxu.github.com</p>
+		<p>Destination: C:/Users/muxu/tiemuxu.github.com/_site</p>
+		<p>Genetating...: done.</p>
+		<p>Server address: https://127.0.0.1:4000</p>
+		<p>Server running... press ctrl-c to stop.</p>
+	</div>
+	<br />
+	<p>
+		可是事情并没有结束，当我满怀期待地在浏览器里访问该地址时，看到的却是 'Not Found' 的错误，郁闷到差点一口老血喷出来。我平静下来想了想，作为技术人员希望事情一切顺利从来就是个小概率事件。如同在开发过程中，不管自己觉得代码写得再如何完美，也总会有 bug 存在。所以遇到问题不要着急上火，而是继续搜寻<a href="https://github.com/jekyll/jekyll/issues/1342" target="_blank">答案</a>。原来需要把博客代码仓库里的配置文件 _config.yml 中的 baseurl 删除，然后重启服务。谢天谢地，它终于跑起来了，这几乎快要让我“泪流满面”，连在客厅里打电话的室友都以为我疯了，连声问我“何弃疗”。
+	</p>
+	<br />
+	<p>
+		哦，对了，如果默认的 'server address' 是 '0.0.0.0:4000' 的话，可以到 'C:\Ruby200\lib\ruby\gems\2.0.0\gems\jekyll-1.4.2\lib\jekyll' 目录下修改 configuration 文件，改成自己喜欢的 IP 和端口。到此为止，本地的开发环境已经搭建完毕，之后提交代码或者写了新的文章，就可以先在本地预览，将结果调整到自己最满意的状态，再一次性提交它们，岂不是方便而高效吗？ 
+	</p>
 </div>
 	</div>
 	<div id="disqus_thread">

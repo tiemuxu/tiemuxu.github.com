@@ -41,6 +41,8 @@ a:active {
 b {
   font-weight: 700;
 }
+
+
 /*******************************************************************************/
 /*************************************************************************************************/
 
@@ -347,6 +349,18 @@ div.category:hover, div.tag:hover, div.comment:hover {
 .content p {
 	font: 14px/1.5 "Microsoft Yahei","Microsoft JhengHei",Pmingliu,"Segoe UI","Segoe UI Web Regular","Segoe UI Symbol","Helvetica Neue","BBAlpha Sans","S60 Sans",Arial,"sans-serif";
 	font-weight: lighter;
+}
+.content p.small {
+  font-size: 12px;
+}
+.content p.center {
+  text-align: center;
+}
+.content p.imgContainer {
+  text-align: center;
+}
+.content p.imgContainer img {
+  width: 500px;
 }
 .content p a {
   text-decoration: underline;

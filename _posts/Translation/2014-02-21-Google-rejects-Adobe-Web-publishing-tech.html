@@ -1,0 +1,56 @@
+---
+layout: post
+title: “朝令夕改”，Google 终拒 Adobe Web 发布技术
+categories: translation
+tags: Google Adobe Regions
+---
+<div>
+	<p>
+		Adobe 的 <a href="http://news.cnet.com/8301-30685_3-20069312-264/adobes-web-design-work-lands-in-webkit-browser/" target="_blank">CSS Regions</a> 和 CSS Exclusions 技术分别用于将文字限定在某个（些）区域里流动或者围绕着该区域来展示。
+	</p>
+	<br />
+	<p>
+		拒绝这样一个拥有诸多优势的技术方案并不容易，更何况已经答应在先。Google 本已决定使用 CSS Regions 来给 web 页面增添更显精美的杂志风格布局。然而<a href="https://codereview.chromium.org/143323014/" target="_blank">该项技术过于复杂</a>，它极有可能影响到移动设备版的 Chrome 开发进度。根据 <a href="https://groups.google.com/a/chromium.org/forum/#!msg/blink-dev/kTktlHPJn4Q/YrnfLxeMO7IJ" target="_blank">Chrome 开发人员 Eric Seidel </a>的说法，Google 希望大幅提高移动端 Chrome 的运行速度，并将其列入2014年度首要开发项目之中。鉴于以上种种原因，Google 最终放弃了 Adobe 的 CSS Regions 技术。
+	</p>
+	<br />
+	<p>
+		为了使得 Flash Player 的优良性能可以集成到本地 Web 标准中，<a href="http://news.cnet.com/8301-30685_3-20061315-264.html" target="_blank">Adobe 数年来一直埋头开发 CSS Regions </a>并取得了相当程度的进展——它已经能够支持 Google 的 Blink 渲染引擎以及 Apple 的 Webkit 项目（Blink 的基础)。然而，Seidel 仍旧打算与 Adobe 方面一起<a href="https://groups.google.com/a/chromium.org/forum/#!msg/blink-dev/kTktlHPJn4Q/y5YjGIvudJUJ" target="_blank">将 CSS Regions 从 Blink 中移除</a>。
+	</p>
+	<br />
+	<p>
+		“我想 Blink 今年的焦点肯定是要提高其在移动设备的性能表现 ……我已经开始意识到 Regions 并没能很好地兼容目前的性能优化，却反过来影响了我们核心渲染代码的优化和精简。Regions 的确能够解决 Web 平台某些实际的缺陷，可我认为 Blink 需要的应该是更加简单或者是体积更小的弥补那些不足的方案（有 Adobe 的帮助那就再好不过了）。”作为 Blink 项目的领头人，Eric Seidel 在2013年度的 Google 开发者大会上解释了他弃用 Regions 的原因。
+	</p>
+	<br />
+	<p class="imgContainer">
+		<img src="http://p1.zhimg.com/82/5c/825ccfa05c27a79fa280f01164de0246_m.jpg" alt="Eric Seidel, leader of Blink team." />
+		<p class="small center">Eric Seidel，Blink项目的领导者之一，在2013年Google I/O上发表演讲</p>
+	</p>
+	<br />
+	<p>
+		CSS Regions 的支持者们对此决定非常不满，而且反弹强烈，他们回应说该项技术包括与它相关的另一种方案 <a href="https://blogs.adobe.com/webplatform/2014/01/08/fragmentation-of-masked-and-clipped-content-part-1/" target="_blank">text fragmentation</a> 都是大有用处的，<a href="https://groups.google.com/a/chromium.org/d/msg/blink-dev/kTktlHPJn4Q/GK3dh-gAg4kJ" target="_blank">而 Google 如此严苛的决策方式会极大地阻碍人们对 Blink 的贡献</a>。与此同时，Adobe 也在极力扭转 Google 的态度。
+	</p>
+	<br />
+	<p>
+		“我们承诺会跟你们一起努力，修复那些缺陷，并保证 regions 代码绝不会拖累 Blink 的2014年度开发目标。” CSS Regions 项目组的 <a href="https://groups.google.com/a/chromium.org/forum/#!msg/blink-dev/kTktlHPJn4Q/GK3dh-gAg4kJ" target="_blank">Mihnea Ovidenie 和 Andrei Bucur 说</a>。
+	</p>
+	<br />
+	<p>
+		然而这番承诺收效甚微。Google Chrome 的另一位开发者 Adam Barth 表示，他更期望 <a href="https://groups.google.com/a/chromium.org/forum/#!msg/blink-dev/kTktlHPJn4Q/k45HnjbeZAYJ" target="_blank">Blink 能够良好运行基于 Web 的应用</a>，这样开发者们才会更多地投身 Web ，而不是像 iOS 的 Cocoa 那种移动软件基础。
+	</p>
+	<br />
+	<p>
+		“并不是说我一点儿也不在乎能否在浏览器上拥有书籍或杂志那样的阅读体验，比起这个我更关心的是要把 Web 转变为更能吸引应用开发的平台，超越 Cocoa。” Barth 周六这样说道。
+	</p>
+	<br />
+	<p>
+		在低端设备上浏览器也能有较好的性能表现，这是 <a href="https://groups.google.com/a/chromium.org/forum/#!msg/blink-dev/Z5OzwYh3Wfk/IWooaY5FZowJ" target="_blank">Google 2014年 Blink 项目最优先的目标</a>。
+	</p>
+	<br />
+	<p>
+		“Blink 毫无疑问要成为性能最佳的移动 Web 引擎，” Seidel 阐述了其开发的目标。它不但要获得最高的测试评分，还要实现最低的性能消耗，占用更少的内存，同时能更快地加载网页和应用，滚动页面或者显示动画效果时可以流畅地刷新屏幕。
+	</p>
+	<br />
+	<p class="small">
+		<i>原文：</i><a href="http://news.cnet.com/8301-1023_3-57617840-93/reversing-course-google-rejects-adobe-web-publishing-tech/?utm_source=html5weekly&utm_medium=email" target="_blank">Reversing course, Google rejects Adobe Web publishing tech</a> 
+	</p>
+</div> 

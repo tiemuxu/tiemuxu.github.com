@@ -345,6 +345,7 @@ div.category:hover, div.tag:hover, div.comment:hover {
   line-height: 1;
   color: #79b429;
   margin-bottom: 20px;
+  font-family: caecilia, times, "PMingLiU", "MingLiU", "FangSong", serif;
 }
 .content p {
 	font-size: 14px;

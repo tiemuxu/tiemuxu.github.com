@@ -33,10 +33,10 @@
 		    var value = values[j],
 			    label = labels[j],
 				angleplus = 360 * value / total,
-				p = sector(cx, cy, r, angle, angle + angleplus, {fill: fill, stroke: stroke, "stroke-width": 1, opacity: 1}).toBack();
+				p = sector(cx, cy, r, angle, angle + angleplus, {fill: fill, stroke: stroke, "stroke-width": 2, opacity: 1}).toBack();
 				
 			p.mouseover(function() {
-			    p.stop().animate({fill: "#6A4E3E", transform: "s1.1 1.1 " + cx + " " + cy}, 500, "elastic");
+			    p.stop().animate({fill: "#666", transform: "s1.1 1.1 " + cx + " " + cy}, 500, "elastic");
 				circle.stop().animate({r: r * 0.4, opacity: 1}, 1000, "elastic");
 				txt.stop().attr({text: label + '\n' + value + "%"}).animate({opacity: 1}, 500, "bounce");
 			}).mouseout(function() {
@@ -62,40 +62,40 @@
 
 function drawPie() {
     var paper=Raphael("holder", 673, 270);
-    var valuesFrontend = [],
-	    labelsFrontend = [],
+    var valuesPM = [],
+	    labelsPM = [],
 		valuesLanguage = [],
 		labelsLanguage = [],
-		valuesComp = [],
-		labelsComp = [],
+		valuesFrontend = [],
+		labelsFrontend = [],
 		valuesDesign = [],
 		labelsDesign = [];
-	$("#frontend tr").each(function() {
-	    valuesFrontend.push(parseInt($("td", this).text(), 10));
-		labelsFrontend.push($("th", this).text());
+	$("#pm tr").each(function() {
+	    valuesPM.push(parseInt($("td", this).text(), 10));
+		labelsPM.push($("th", this).text());
 	});
 	$("#language tr").each(function() {
 	    valuesLanguage.push(parseInt($("td", this).text(), 10));
 		labelsLanguage.push($("th", this).text());
 	});
-	$("#computer tr").each(function() {
-	    valuesComp.push(parseInt($("td", this).text(), 10));
-		labelsComp.push($("th", this).text());
+	$("#frontend tr").each(function() {
+	    valuesFrontend.push(parseInt($("td", this).text(), 10));
+		labelsFrontend.push($("th", this).text());
 	});
 	$("#design tr").each(function() {
 	    valuesDesign.push(parseInt($("td", this).text(), 10));
 		labelsDesign.push($("th", this).text());
 	});
 	$("#pieData").hide();
-	var curStroke = "#2a2a2c",
+	var curStroke = "#1f1f1f",
 	    fill = "#79b429",
 		titleFron = "前端",
 		titleLan = "语言",
-		titleComp = "其他",
+		titlePM = "产品",
 		titleDesign = "设计";
 	var circleAttr = {
 	    stroke: "none",
-		fill: "#6A4E3E",
+		fill: "#666",
 		opacity: 0,
 	};
 	/*var circleFrontAttr = {
@@ -108,9 +108,9 @@ function drawPie() {
 		fill: "r#B2FFED-#2a2a2c",
 		opacity: 0,
 	};*/
-	paper.pieChart(550, 120, 100, valuesFrontend, labelsFrontend, curStroke, fill, titleFron, circleAttr);
+	paper.pieChart(550, 120, 100, valuesPM, labelsPM, curStroke, fill, titlePM, circleAttr);
 	paper.pieChart(240, 88, 80, valuesLanguage, labelsLanguage, curStroke, "#DCE248", titleLan, circleAttr);
-	paper.pieChart(400, 180, 60, valuesComp, labelsComp, curStroke, fill, titleComp, circleAttr);
+	paper.pieChart(400, 180, 60, valuesFrontend, labelsFrontend, curStroke, fill, titleFron, circleAttr);
 	paper.pieChart(80, 120, 70, valuesDesign, labelsDesign, curStroke, "#B2FFED", titleDesign, circleAttr);
 }
 

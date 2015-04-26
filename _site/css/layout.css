@@ -5,7 +5,7 @@
 
 body {
   background-color: #E0E0E0;
-  font: 12px/1.5 "Microsoft JhengHei",Pmingliu,"Segoe UI","Segoe UI Web Regular","Segoe UI Symbol","Helvetica Neue","BBAlpha Sans","S60 Sans",Arial,"sans-serif";
+  font: 12px/1.5 Helvetica,Arial,"LiHei Pro Medium","SimHei", sans-serif;
 }
 
 h1 {
@@ -329,6 +329,23 @@ div.category:hover, div.tag:hover, div.comment:hover {
   opacity: 1;
 }
 
+
+.quote-or-list {
+  padding-left: 1.5em;
+  border-left: 4px solid rgba(121,180,41,.4);
+  margin-top: 20px;
+  color: #777;
+}
+.list-without-style {
+  list-style: none;
+}
+.list-without-style li {
+  margin-bottom: 1em;
+}
+.list-without-style li:last-child {
+  margin-bottom: 0;
+}
+
 /*****************************************************/
 
 /*post content*/
@@ -345,9 +362,10 @@ div.category:hover, div.tag:hover, div.comment:hover {
   line-height: 1;
   color: #79b429;
   margin-bottom: 20px;
+  font-family: caecilia, times, "PMingLiU", "MingLiU", "FangSong", serif;
 }
 .content p {
-	font: 14px/1.5 "Microsoft Yahei","Microsoft JhengHei",Pmingliu,"Segoe UI","Segoe UI Web Regular","Segoe UI Symbol","Helvetica Neue","BBAlpha Sans","S60 Sans",Arial,"sans-serif";
+	font-size: 14px;
 	font-weight: lighter;
 }
 .content p.small {

@@ -18,24 +18,24 @@ h1 {
   /*font-family: 'MuseoSlab500', "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "SimHei";*/
   font-size: 2em;
   line-height: 1;
-  font-weight: bold;
+  font-weight: 100;
 }
 h2 {
   /*font-family: 'MuseoSlab500', "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "SimHei";*/
   font-size: 1.5em;
   line-height: 1;
-  font-weight: bold;
+  font-weight: 100;
 }
 h3 {
   /*font-family: 'MuseoSlab500', "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "SimHei";*/
   font-size: 1.33em;
   line-height: 1;
-  font-weight: bold;
+  font-weight: 100;
 }
 
 a {
-    color: #888888;
-    font-weight: bold;
+    color: #fff;
+    font-weight: 100;
     text-decoration: none;
 	-webkit-transition: 0.5s;
 	-moz-transition: 0.5s;
@@ -58,7 +58,8 @@ header {
 	left: 0px;
     width: 100%;
     height: 60px;
-    background: #6A4E3E;
+    /*background: #6A4E3E;*/
+    background: #777;
 	/*-webkit-box-shadow: 0px 2px 10px #686868;
     -moz-box-shadow: 0px 2px 10px #686868;
     box-shadow: 0px 1px 1px #686868;*/
@@ -145,7 +146,8 @@ header #menu ul {
 	font-size: 16px;
 	padding: 10px 50px;
 	border-width: 0px;
-	color: #B2FFED;
+	color: #fff;
+	font-weight: 100;
 	/*border: 1px solid #404040;*/
 }
 .odd {
@@ -260,12 +262,90 @@ header #menu ul {
 	background: #79b429;
 	border-radius: 8px;
 }
+/* */
+
+#timeline_tie {
+	margin-left: 25px;
+}
+#timeline_desc {
+	margin-left: 25px;
+	color: #BDBDBD;
+	font-size: 14px;
+	font-weight: 100;
+}
+#timeline_desc .every_job {
+	margin-bottom: 20px;
+}
+#timeline_desc .dot {
+	width: 16px;
+	height: 16px;
+	border-radius: 8px;
+	border: none;
+	float: left;
+}
+#timeline_desc .PM .dot {
+	background-color: #79b429;
+}
+#timeline_desc .frontend .dot {
+	background-color: #DCE248;
+}
+#timeline_desc .other .dot {
+	background-color: #B2FFED;
+}
+#timeline_desc .period {
+	font-size: 18px;
+}
+#timeline_desc .position {
+	font-size: 18px;
+	color: #fff;
+}
+/*#timeline_desc .PM .position {
+	color: #79b429;
+}
+#timeline_desc .frontend .position {
+	color: #DCE248;
+}
+#timeline_desc .other .position {
+	color: #B2FFED;
+}*/
+#timeline_desc .indented {
+	margin-left: 26px;
+}
+#timeline_desc .period {
+	width: auto;
+	padding: 4px;
+	display: inline-block;
+	border: none;
+  	display: inline-block;
+  	margin-left: 10px;
+  	background-color: #79b429;
+  	color: #1f1f1f;
+  	border-radius: 2px;
+  	position: relative;
+  	top: -5px;
+}
+#timeline_desc .PM .period {
+  	background-color: #79b429;
+}
+#timeline_desc .frontend .period {
+	background-color: #DCE248;
+}
+#timeline_desc .other .period {
+	background-color: #B2FFED;
+}
+#timeline_desc a {
+	color: #79b429;
+	text-decoration: underline;
+}
+
+
+
 
 footer {
     width: 800px;
 	margin: 50px auto 0px auto;
 	color: #C8C8C8;
-	background: #6A4E3E;
+	background: #777;
 	padding: 10px;
 	text-align: center;
 	border-radius: 5px 5px 0px 0px; 

@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>Windows 下安装 jekyll - Front Wind</title>
+    <title>微信让我烦躁的三处体验以及我的优化方案之一聊天记录不同步 - Front Wind</title>
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" media="screen" href="/css/layout.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="/css/post.css" />
@@ -207,17 +207,17 @@
 	    <div class="post-time">
 	        <div class="arrow"></div>
 		    <div class="time">
-		        <p class="day">18</p>
-			    <p class="month_year">2014·Jan</p>
+		        <p class="day">23</p>
+			    <p class="month_year">2015·Jul</p>
 		    </div>
 		    <div class="category">
 		        
 			        <p>
 				    
 				        
-					    <a href="/frontend.html">
+					    <a href="/essay.html">
 					    
-					        frontend
+					        essay
 					    </a>
 				    
 				    </p>
@@ -228,18 +228,14 @@
 			        <p>
 				    
 				        
-					    <a href="/tags.html#jekyll">jekyll</a>,
-					    
-				    
-				        
-					    <a href="/tags.html#github">github</a>
+					    <a href="/tags.html#产品">产品</a>
 					    
 				    
 				    </p>
 			    
 		    </div>
 		    <div class="comment">
-		        <p><a href="/frontend/2014/01/18/guide-of-jekyll-installation-in-windows.html#disqus_thread">0</a></p>
+		        <p><a href="/essay/2015/07/23/wechat-out-of-sync.html#disqus_thread">0</a></p>
 		    </div>
 	    </div>
 	    <!--<div id="relatedPost">
@@ -251,92 +247,23 @@
 	    </div>-->
 	</div>
 	<div class="content">
-	    <h2>Windows 下安装 jekyll</h2>
+	    <h2>微信让我烦躁的三处体验以及我的优化方案之一聊天记录不同步</h2>
 		<div>
-	<p>
-		自学了一点前端开发之后，为了学以致用，也想将那些零碎的知识贯通起来，真正做一个略微大些的项目，便利用 <a href="https://github.com/" target="_blank">github</a> 的 <a href="http://pages.github.com/" target="_blank">pages</a> 搭建了这个博客。具体的搭建过程和概念的解释可参考<a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank">这里</a>。值得一提的是，我在搭建博客的时候创建的是这样的 repository：tiemuxu.github.com，并在 master 分支下做所有操作。建议新手可同时参考另一篇精简的<a href="http://hzmook.github.io/2012/07/01/use-jekyll-build-blog-on-github.html" target="_blank">文章</a>，或者自行 Google ，相信最终都能够将自己的博客搭建出来。这里就不再赘述。
-	</p>
+	<p>微信常常让我感觉烦躁的体验之一在于它的聊天记录不能像 Google Hangout（以前叫 gtalk）那样在各个端之间进行同步，更准确的说应该是它不支持将聊天记录自动存储到云端，用户无法方便地通过任何设备来取回或查看完整的聊天记录。这导致我在切换手机使用或在电脑上使用微信时对话总是缺少完整的上下文，而在电脑上则干脆连聊天记录都不曾留下。而我常有更换手机使用的习惯，可能几天想用 iOS，过几天又会换用 Android （原生系统）。有一次我在笔记本上（微信客户端）与老板沟通过一些工作上的事情，当时使用的是 Android 手机来进行登录操作的，再后来某天我上班时将 Android 手机落在家里，而当天的工作我需要先确认一下之前跟老板的沟通记录，打开笔记本上的微信客户端没有留下任何聊天记录，再打开 iPhone 上的微信同样缺少那一段消息，而老板又在出差，打电话跟他确认又怕他怪罪我做事情太过马虎，当时我的心境真可谓是搔首踟蹰而无所适从......</p>
 	<br />
-	<p>
-		在开发过程中，需要将代码 commit 到 github 上，才能查看效果。因此常常发生的情况是，新的 commit 只是为了修复上一次的某些零碎 bug，如果人再粗心点，提交代码后才发现还有漏网之鱼，于是还得再来一次，如此反复。导致 github 上的 commit 历史很难有 milestone 式的版本记录，同时也增加了开发的繁琐度。那么在本地配置开发环境就显得尤为必要了。github 使用 <a href="http://jekyllrb.com/" target="_blank">jekyll</a> 来将网页源码转变为网页。因此，所需的开发环境就是本地的 jekyll。
-	</p>
 	<br />
-	<p>
-		<b>首先</b>，需要安装 Ruby 环境和 RubyGem。最简单有效的方式是使用 <a href="http://rubyinstaller.org/downloads/" target="_blank">RubyInstaller</a>，下载安装即可（我安装的是最新版本 Ruby2.0.0-p353）。
-	</p>
+	<h3>说完了故事，接下来我试着简单分析下微信没有支持该聊天记录同步功能的原因。</h3>
+	<p>首先，从开发一个功能的目的或者说它所能带来的收益预期的角度来考虑。假设微信的产品团队在衡量一个功能优先级是否够高，是否要付诸开发的标准包括：是否能增加用户数，是否能增强用户粘度，以及是否能提高用户体验。同时满足这三个条件的功能优先级自然就高，满足较少或者不满足的功能自然优先级较低甚至不会被考虑。聊天记录同步的功能不能迅速传播所以无法增加用户数，比起便捷的沟通本身或者朋友圈这样的社交属性它也无法增强用户粘度，唯一能做到的只有最后一条提高用户体验，所以它自然不如朋友圈那样三个条件均能满足的重要功能，其优先级毫无疑问会被排得很低，甚至在很长一段时间内都不会考虑实现。 </p>
 	<br />
-	<p>
-	 	<b>然后</b>，还需要安装 <a href="http://rubyinstaller.org/downloads/">Development Kit</a>(DevKit)，同样选择合适的版本。下载后运行该 exe 文件，将其解压到任意位置，这里建议解压为 'C:\Devkit' ,然后运行 'Start Command Prompt with Ruby'（类似于cmd的命令行控制台），通过命令行安装：
-	</p>
-	<div class="cmdLine">
-		<p>C:\Users\muxu&gt;cd C:\DevKit</p>
-		<p>C:\DevKit&gt;ruby dk.rb init</p>
-		<p>C:\DevKit&gt;ruby dk.rb install</p>
-	</div>
-	<p>
-		显示如下信息时表示 DevKit 已经安装成功：
-	</p>
-	<div class="cmdLine">
-		<p>[INFO] Updating convenience notice gem override for 'C:/ruby200'</p>
-		<p>[INFO] Installing 'C:/ruby200/lib/ruby/site_ruby/devkit.rb'</p>
-	</div>
+	<p>其次，再从用户需求的角度来分析。微信上的聊天内容大多还是偏向朋友熟人间的闲聊（说完就过去了），对于这样的用户来说，记录是否存储到云端是否还能进行同步他们并不会很在乎；更有些聊天内容涉及隐私等敏感信息，为其存储起来反而让人觉得不安，有时还得颇费心思删除干净，所以他们也不会需要这样的功能；此外，微信的使用场景大多还是偏向手机这样的移动设备，而大多数用户贴身常用的也只不过是一部手机，所以他们对于能在多个设备间同步聊天记录的需求并不迫切。所以，这样的功能不是在大多数情况下被大多数人所需要的，故微信目前便不会考虑进行开发。</p>
 	<br />
-	<p>
-		<b>接下来</b>，可以安装 jekyll 了，在相同的目录下运行：
-	</p>
-	<div class="cmdLine">
-		<p>C:\DevKit&gt;gem install jekyll</p>
-	</div>
+	<p>写到这里我本来想继续从技术实现难度和硬件成本的角度再来个收尾，于是便去 Google 了一下聊天记录云存储的问题，然后即便是毛寸短发我的也不得不瞬间凌乱了。原来微信（V6.2.3）已经支持“聊天记录迁移”，官方所描述的用户场景是这样的：聊天记录可以快速导入到新手机，不用担心换手机后聊天记录的遗失。嗯，这的确是一种解决同步问题的方式，但所幸跟我想要的“同步”却不是完全相同的概念，并没有涵盖到所有的用户场景，就好像我之前提到的自己的故事，当时跟老板沟通过之后既没有想到要备份到云端，也不觉得需要将聊天记录导入到另一只手机（因为当时的我不可能预料到会将手机落在家里，也并不知道还有这个功能）；而微信官方描述的场景更多的还是说的是当用户更换新手机时可以将旧手机的记录导入进来，并不是我所描述同时使用两部（或多部）手机并时常切换使用的情景，在我所遇到的那个窘境中，微信的解决方案对我已经无力回天，但如果能换做是 Google Hangout 就完全没有任何问题啦。与此同时，微信还支持“通过云端迁移”的功能，旨在让用户可以选择某些对话上传到云端，然后在规定的时间内再下载下来，其实这也不是真正的云同步。故此，我所说的这些也不能算是毫无意义。</p>
 	<br />
-	<p>
-		<b>最后</b>，再来安装 Rdiscount，用以解析 Markdown 标记。如果使用的是 Textile，则安装 Kramdown：
-	</p>
-	<div class="cmdLine">
-		<p>C:\DevKit&gt;gem install rdiscount</p>		
-	</div>
 	<br />
-	<p>
-		通过以上步骤，所有的环境和依赖包都已安装成功。进入博客的仓库目录（如 cd tiemuxu.github.com），用下面的命令来启动 jekyll：
-	</p>
-	<div class="cmdLine">
-		<p>
-			C:\Users\muxu\tiemuxu.github.com&gt;jekyll serve
-		</p>
-	</div>
-	<br />
-	<p>
-		本以为能够大功告成，控制台里却出现类似如下的错误提示：
-	</p>
-	<div class="cmdLine">
-		<p>
-			error: invalid byte sequence in GBK.
-		</p>
-	</div>
-	<p>
-		Google 后得知，博客的源代码中包含中文字符，而 Ruby 控制台并不支持UTF-8编码。那么解决问题的思路就很明显了，只需要想办法使其支持就行。 Google 再次帮我找到了答案——在执行 jekyll 命令前，可以用命令将控制台的代码格式转为 UTF-8：
-	</p>
-	<div class="cmdLine">
-		<p>C:\Users\tiemuxu.github.com&gt;chcp 65001</p>
-		<p>C:\Users\tiemuxu.github.com&gt;jekyll serve</p>
-	</div>
-	<p>然后终于在控制台里看到成功运行的提示：</p>
-	<div class="cmdLine">
-		<p>Configuration file: C:/Users/muxu/tiemuxu.github.com/_config.yml</p>
-		<p>Source: C:/Users/muxu/tiemuxu.github.com</p>
-		<p>Destination: C:/Users/muxu/tiemuxu.github.com/_site</p>
-		<p>Genetating...: done.</p>
-		<p>Server address: https://127.0.0.1:4000</p>
-		<p>Server running... press ctrl-c to stop.</p>
-	</div>
-	<br />
-	<p>
-		可是事情并没有结束，当我满怀期待地在浏览器里访问该地址时，看到的却是 'Not Found' 的错误，郁闷到差点一口老血喷出来。我平静下来想了想，作为技术人员希望事情一切顺利从来就是个小概率事件。如同在开发过程中，不管自己觉得代码写得再如何完美，也总会有 bug 存在。所以遇到问题不要着急上火，而是继续搜寻<a href="https://github.com/jekyll/jekyll/issues/1342" target="_blank">答案</a>。原来需要把博客代码仓库里的配置文件 _config.yml 中的 baseurl 删除，然后重启服务。谢天谢地，它终于跑起来了，这几乎快要让我“泪流满面”，连在客厅里打电话的室友都以为我疯了，连声问我“何弃疗”。
-	</p>
-	<br />
-	<p>
-		哦，对了，如果默认的 'server address' 是 '0.0.0.0:4000' 的话，可以到 'C:\Ruby200\lib\ruby\gems\2.0.0\gems\jekyll-1.4.2\lib\jekyll' 目录下修改 configuration 文件，改成自己喜欢的 IP 和端口。到此为止，本地的开发环境已经搭建完毕，之后提交代码或者写了新的文章，就可以先在本地预览，将结果调整到自己最满意的状态，再一次性提交它们，岂不是方便而高效吗？ 
-	</p>
+	<h3>那么，接下来我想尝试提出自己的解决方案。</h3>
+	<p>前面说过，这不是一个人人都需要的强需求，再加上用户基数如此巨大，直接像 Google Hangout 那样默认云同步所有聊天记录的做法，一方面是增加成本，另外也会给一部分用户带来麻烦（他们希望聊过即焚，不留痕迹）。我的解决方案是<span style="color:#79b429;font-weight:bold;">“选择性同步”</span>它跟微信现有的做法不同，用户可以直接在聊天列表中选择为某些对话开启同步，为了避免用户在进行同步之前已有过一些重要对话而未能存储到云端的情况发生，可询问用户是否同时同步本地已有的聊天记录，是的话就将已有记录也同步到云端，否则就只同步开启后的对话。用户可随时停止同步，顾名思义，停止期间的对话不会进行同步，再开启时可同前那样进行询问。如此，对于同步过的对话，用户登录任何设备（包括手机、平板以及电脑等）的微信客户端时，会自动将所有设为同步的聊天记录同步下来。而对于进行过同步的对话，在删除消息时可询问用户仅删除本地的对话（未同步的部分）还是删除所有（包括云端）。如此一来，既可以不必为了闲聊等的对话浪费资源，又能为工作沟通之类的重要对话进行同步。我认为是比较好的解决方案。</p>
 </div>
+
 	</div>
 	<div id="disqus_thread"></div><script type="text/javascript">    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */    var disqus_shortname = 'tiemuxu'; // required: replace example with your forum shortname    /* * * DON'T EDIT BELOW THIS LINE * * */    (function() {        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);    })();</script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>    
 </div>

@@ -365,7 +365,7 @@ div.category:hover, div.tag:hover, div.comment:hover {
   font-family: caecilia, times, "PMingLiU", "MingLiU", "FangSong", serif;
 }
 .content p {
-	font-size: 14px;
+	font-size: 15px;
 	font-weight: normal;
 }
 .content p.small {

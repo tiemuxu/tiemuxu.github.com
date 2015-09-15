@@ -353,7 +353,7 @@ div.category:hover, div.tag:hover, div.comment:hover {
   width: 560px;
   margin: 0px 0px 0px 170px;
   padding: 30px 0px 30px 0px;
-  color: #555;  
+  color: #444;  
   font-size: 14px;
 }
 .content h2 {
@@ -366,7 +366,7 @@ div.category:hover, div.tag:hover, div.comment:hover {
 }
 .content p {
 	font-size: 14px;
-	font-weight: lighter;
+	font-weight: normal;
 }
 .content p.small {
   font-size: 12px;

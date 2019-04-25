@@ -92,8 +92,8 @@ Resume.Timeline = (function(){
 			timeline_canvas.circle(end_date, tick_y0 - 150, 6).attr(inner_disc).toFront();
 			rect_top = tick_y0 - 150 - 70;
 			rect_left = (start_date - end_date) / 2 - 55 + end_date;
-			timeline_canvas.rect(rect_left, rect_top, 200, 44, 2).attr(position_PM_rect);
-			timeline_canvas.text(rect_left + 52, rect_top + 22, '产品经理+交互设计').attr({'font-size':18, stroke:'#1f1f1f', fill:'#1f1f1f', "font-family": "Microsoft Yahei"});
+			timeline_canvas.rect(rect_left, rect_top, 104, 44, 2).attr(position_PM_rect);
+			timeline_canvas.text(rect_left + 52, rect_top + 22, '产品设计师').attr({'font-size':18, stroke:'#1f1f1f', fill:'#1f1f1f', "font-family": "Microsoft Yahei"});
 			timeline_canvas.path('M' + (rect_left + 51) + ',' + (rect_top + 44) + 'L' + (rect_left + 55) + ',' + (rect_top + 52) + 'L' + (rect_left + 59) + ',' + (rect_top + 44) + 'C').attr({fill: '#79b429', stroke: '#79b429', 'stroke-width': 1})
 		} else if (position_type == 'frontend') {
 			timeline_canvas.circle(start_date, tick_y0 - 60, 10).attr(position_frontend_disc).toBack();
